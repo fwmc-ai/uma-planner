@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "release_date": "2025-07-14",
+  "release_name": "Initial Release",
+  "build_number": 1,
+  "features": [
+    "Complete character database (35+ characters)",
+    "Intelligent training recommendations",
+    "Visual character portraits with costume system",
+    "Professional background design and branding",
+    "Progressive Web App with offline support"
+  ],
+  "cache_version": "uma-planner-v1.0.0",
+  "data_version": "2025-07-14",
+  "minimum_cache_clear": false,
+  "update_notes": "🎉 Welcome to the Uma Musume Career Planner! Plan your character builds, get training recommendations, and achieve your racing dreams!",
+  "compatibility": {
+    "browsers": ["Chrome 80+", "Firefox 75+", "Safari 13+", "Edge 80+"],
+    "mobile": true,
+    "offline": true
+  },
+  "assets": {
+    "character_images": 63,
+    "background_images": 1,
+    "data_files": 2,
+    "total_size_mb": 8.2
+  }
+}
