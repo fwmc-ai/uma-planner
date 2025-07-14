@@ -4,6 +4,33 @@
 
 ---
 
+## [2025-07-14] - Phase 2H: GitHub Pages Image Loading Fix
+
+### 🔧 **Critical Deployment Fix**
+
+#### Fixed: Character Image Loading on GitHub Pages
+- **Issue Identified**: Character images returning 404 errors on live GitHub Pages site
+- **Root Cause**: Git repository tracked files with Capital_Case.webp names, but code expected lowercase_case.webp
+- **Resolution**: Renamed all 63 character image files to match lowercase naming convention
+  - School uniforms: `/umaicons/school/` (31 files)
+  - Secondary costumes: `/umaicons/secondary/` (32 files)
+- **Cache Invalidation**: Updated version to 1.0.1 and service worker cache names
+- **Impact**: ✅ All character portraits now load correctly on production site
+
+#### Technical Details
+- **File Rename Strategy**: Used `git mv` to preserve file history while updating names
+- **Version Bump**: 1.0.0 → 1.0.1 to force browser cache refresh
+- **Service Worker Update**: Updated cache names from `uma-planner-v1.0.0` to `uma-planner-v1.0.1`
+- **Deployment Validation**: Ensured all image paths match between filesystem, git, and code references
+
+#### Files Updated
+- **Image Files**: 63 character portraits renamed to lowercase format
+- **version.json**: Updated version, build number, and cache version
+- **sw.js**: Updated cache names and version comment
+- **Status**: 🟢 Production deployment issue resolved
+
+---
+
 ## [2025-07-14] - Phase 2G: Background Image System & UI Polish
 
 ### 🖼️ **Site-Wide Background Image Implementation**
