@@ -1,6 +1,7 @@
 # Development documentation (for Claude Code)
 CLAUDE.md
 PROJECT_STATUS.md
+MODULARIZATION_CHECKLIST.md
 
 # License file (can be excluded for web app)
 LICENSE
