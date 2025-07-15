@@ -1,8 +1,8 @@
 // Uma Musume Career Planner - Service Worker
-// Version 1.0.1 - Image Loading Fix
+// Version 1.1.0 - Mobile Experience Optimization
 
-const CACHE_NAME = 'uma-planner-v1.0.1';
-const STATIC_CACHE_NAME = 'uma-static-v1.0.1';
+const CACHE_NAME = 'uma-planner-v1.1.0';
+const STATIC_CACHE_NAME = 'uma-static-v1.1.0';
 
 // Files to cache for offline functionality
 const STATIC_ASSETS = [

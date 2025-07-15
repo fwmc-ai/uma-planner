@@ -4,6 +4,104 @@
 
 ---
 
+## [2025-07-14] - Phase 2I: Mobile Experience Optimization
+
+### 📱 **Comprehensive Mobile Improvements**
+
+#### Fixed: Mobile Background Image Display
+- **Issue**: Background image not loading on mobile devices due to `background-attachment: fixed` incompatibility
+- **Solution**: Added mobile-specific CSS with `background-attachment: scroll` and absolute positioning
+- **Impact**: ✅ Background image now displays correctly on all mobile devices
+
+#### Fixed: Navigation Scroll Position
+- **Issue**: When selecting a character from further down the page, character planner opened scrolled down
+- **Solution**: Added automatic scroll-to-top on view transitions
+- **Impact**: ✅ All page transitions now start at the top for better UX
+
+#### Enhanced: Mobile Layout Optimization
+- **Character Browser Spacing**: Redesigned crowded header layout with responsive breakpoints
+  - Headers now stack vertically on mobile with proper spacing
+  - Reduced font sizes for mobile (`text-xl` vs `text-2xl`)
+  - Costume toggle buttons optimized for touch targets
+- **Character Planner Layout**: Implemented smart mobile reordering  
+  - Quick Import Stats → Target Selectors → Training Recommendations → Stat Planning → Character Advice
+  - Target Style/Distance selectors moved right after Quick Import on mobile for better workflow
+  - Training recommendations follow target selection for immediate feedback
+  - Desktop retains traditional 2-column layout with selectors in right panel
+
+#### Improved: Progressive Web App (PWA) Installation
+- **Fixed**: 404 errors when installing app to home screen
+- **Solution**: Updated manifest.json paths from `/` to `./` for relative URL handling
+- **App Icon System**: Added support for custom app icons
+  - PNG icon support (192px and 512px)
+  - SVG fallback with branded background
+  - Proper maskable icon configuration
+
+#### Enhanced: Mobile Touch Experience
+- **Touch Targets**: Minimum 44px touch target sizes for better accessibility
+  - Stat control buttons optimized to 48px for easier tapping
+  - Quick increment buttons sized for thumb-friendly interaction
+  - Character cards with proper minimum touch areas
+- **Touch Feedback**: Visual and haptic improvements
+  - Subtle scale animation on button press (0.98x scale)
+  - Optimized tap highlight colors
+  - `touch-action: manipulation` for responsive feel
+- **Input Optimization**: 16px font size prevents iOS zoom on focus
+- **Safe Area Support**: Proper handling for phones with notches/dynamic islands
+- **Better Spacing**: Improved padding and margins for mobile viewport
+  - Reduced character grid gaps (3px vs 6px) on mobile
+  - Container padding respects safe areas
+- **Performance**: Optimized rendering for mobile devices
+
+### 🛠️ **Technical Implementation**
+
+#### Responsive Design Strategy
+- **Mobile-First Approach**: Base styles optimized for mobile, enhanced for desktop
+- **Breakpoint Strategy**: `sm:` (640px+) and `lg:` (1024px+) for progressive enhancement
+- **Flexible Grid**: CSS Grid on desktop, stacked layout on mobile with proper ordering
+
+#### PWA Enhancements
+- **Manifest Updates**: Fixed start_url and scope for GitHub Pages compatibility
+- **Icon Strategy**: Multi-format support with graceful fallbacks
+- **Installation Flow**: Resolved path issues causing installation failures
+
+#### Mobile CSS Optimizations
+```css
+/* Safe area support for modern phones */
+body {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) 
+             env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+@media (max-width: 768px) {
+    body::before { background-attachment: scroll; }
+    button { 
+        min-height: 44px; min-width: 44px; 
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    }
+    button:active { transform: scale(0.98); }
+    .stat-control-btn { min-width: 48px; min-height: 48px; }
+    .quick-increment-btn { min-width: 52px; min-height: 44px; }
+    input, textarea, select { font-size: 16px; }
+}
+```
+
+### 📊 **User Experience Impact**
+
+#### Mobile Usability
+- **Visual Consistency**: Background image creates immersive experience across all devices
+- **Reduced Cognitive Load**: Training recommendations immediately follow input for quick reference
+- **Better Navigation**: Improved spacing prevents accidental taps
+- **App-Like Experience**: PWA installation now works correctly
+
+#### Cross-Device Compatibility
+- **Responsive Layout**: Seamless experience from 320px mobile to 4K desktop
+- **Touch Optimized**: All interactive elements meet accessibility guidelines
+- **Performance**: Optimized CSS reduces mobile rendering overhead
+
+---
+
 ## [2025-07-14] - Phase 2H: GitHub Pages Image Loading Fix
 
 ### 🔧 **Critical Deployment Fix**

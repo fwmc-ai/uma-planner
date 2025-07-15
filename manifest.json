@@ -2,25 +2,37 @@
   "name": "Uma Musume Career Planner",
   "short_name": "Uma Planner",
   "description": "Career Planner for Uma Musume Pretty Derby Global Release - Complete character database and training optimizer",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ec4899",
   "orientation": "portrait-primary",
-  "scope": "/",
+  "scope": "./",
   "lang": "en",
   "icons": [
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><text y='0.9em' font-size='120'>🏇</text></svg>",
+      "src": "./app-icon-192.png",
       "sizes": "192x192",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><text y='0.9em' font-size='320'>🏇</text></svg>",
+      "src": "./app-icon-512.png", 
       "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./app-icon-192.png",
+      "sizes": "192x192", 
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' fill='%23ec4899'/><text x='96' y='130' text-anchor='middle' font-size='120' fill='white'>🏇</text></svg>",
+      "sizes": "192x192",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ],
   "categories": ["games", "utilities", "entertainment"],
@@ -29,7 +41,7 @@
       "name": "Character Browser",
       "short_name": "Characters",
       "description": "Browse Uma Musume character database",
-      "url": "/",
+      "url": "./",
       "icons": [
         {
           "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><text y='0.9em' font-size='60'>👥</text></svg>",

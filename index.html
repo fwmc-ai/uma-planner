@@ -889,21 +889,21 @@
                 
                 const section = createElement('div', 'space-y-4');
                 
-                // Rarity header
-                const header = createElement('div', 'flex items-center justify-between pb-2 border-b border-gray-200');
+                // Rarity header with responsive mobile layout
+                const header = createElement('div', 'pb-2 border-b border-gray-200 space-y-3 sm:space-y-0 sm:flex sm:items-center sm:justify-between');
                 const isFirstSection = rarity === 3; // Keep reference for unique IDs
                 const showToggle = true; // Show toggle on all sections
                 header.innerHTML = `
-                    <div class="flex items-center gap-3">
-                        <h2 class="text-2xl font-bold text-gray-800">${getRarityStars(rarity)} Characters</h2>
-                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">${characters.length} available</span>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+                        <h2 class="text-xl sm:text-2xl font-bold text-gray-800">${getRarityStars(rarity)} Characters</h2>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm self-start">${characters.length} available</span>
                     </div>
                     ${showToggle ? `
-                        <div class="flex items-center bg-gray-100 rounded-lg p-1">
-                            <button id="costume-school${isFirstSection ? '' : '-' + rarity}" class="px-3 py-1 rounded-md text-sm font-medium transition-colors ${appState.costumeMode === 'school' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-600 hover:text-gray-900'}">
+                        <div class="flex items-center bg-gray-100 rounded-lg p-1 w-fit">
+                            <button id="costume-school${isFirstSection ? '' : '-' + rarity}" class="px-2 sm:px-3 py-1 rounded-md text-xs sm:text-sm font-medium transition-colors ${appState.costumeMode === 'school' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-600 hover:text-gray-900'}">
                                 🏫 School
                             </button>
-                            <button id="costume-secondary${isFirstSection ? '' : '-' + rarity}" class="px-3 py-1 rounded-md text-sm font-medium transition-colors ${appState.costumeMode === 'secondary' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-600 hover:text-gray-900'}">
+                            <button id="costume-secondary${isFirstSection ? '' : '-' + rarity}" class="px-2 sm:px-3 py-1 rounded-md text-xs sm:text-sm font-medium transition-colors ${appState.costumeMode === 'secondary' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-600 hover:text-gray-900'}">
                                 ✨ Secondary
                             </button>
                         </div>
@@ -924,11 +924,11 @@
                     });
                 }
                 
-                // Character grid for this rarity
-                const grid = createElement('div', 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6');
+                // Character grid for this rarity with mobile optimizations
+                const grid = createElement('div', 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6');
                 
                 characters.forEach(character => {
-                const card = createElement('div', 'bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow cursor-pointer border border-gray-200 overflow-hidden');
+                const card = createElement('div', 'character-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow cursor-pointer border border-gray-200 overflow-hidden');
                 
                 // Check if character has an image file and add background styling
                 const hasCharacterImage = character.id; // We'll check if file exists
@@ -998,6 +998,11 @@
                         style: character.defaultStyle,
                         stats: character.baseStats // Initialize with character's base stats
                     });
+                    
+                    // Scroll to top when entering character planner
+                    setTimeout(() => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }, 100);
                 });
                 
                 grid.appendChild(card);
@@ -1038,6 +1043,11 @@
             backBtn.innerHTML = `${Icons.ArrowLeft} Back`;
             backBtn.addEventListener('click', () => {
                 updateAppState({ currentView: 'home', selectedCharacter: null });
+                
+                // Scroll to top when returning to home page
+                setTimeout(() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
             });
             backButton.appendChild(backBtn);
             
@@ -1384,11 +1394,11 @@
                 </div>
             `;
 
-            // Stats planning section
-            const statsSection = createElement('div', 'grid grid-cols-1 lg:grid-cols-2 gap-8');
+            // Stats planning section with mobile-optimized layout
+            const statsSection = createElement('div', 'space-y-6 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-8');
             
-            // Left side - Stat sliders
-            const leftPanel = createElement('div', 'space-y-6');
+            // Left side - Quick Import and Stat controls
+            const leftPanel = createElement('div', 'space-y-6 order-1 lg:order-1');
             leftPanel.innerHTML = `
                 <!-- Quick Import Section -->
                 <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-3">
@@ -1450,7 +1460,7 @@
                     
                     <!-- Input Controls -->
                     <div class="flex items-center gap-2">
-                        <button class="stat-btn-minus flex-shrink-0 w-10 h-10 rounded-lg border-2 border-gray-300 hover:border-pink-400 hover:bg-pink-50 flex items-center justify-center font-bold text-gray-600 hover:text-pink-600 transition-colors" 
+                        <button class="stat-control-btn stat-btn-minus flex-shrink-0 w-10 h-10 rounded-lg border-2 border-gray-300 hover:border-pink-400 hover:bg-pink-50 flex items-center justify-center font-bold text-gray-600 hover:text-pink-600 transition-colors" 
                                 data-stat="${stat}" data-action="minus">
                             −
                         </button>
@@ -1461,7 +1471,7 @@
                                    data-stat="${stat}" placeholder="Enter value">
                         </div>
                         
-                        <button class="stat-btn-plus flex-shrink-0 w-10 h-10 rounded-lg border-2 border-gray-300 hover:border-pink-400 hover:bg-pink-50 flex items-center justify-center font-bold text-gray-600 hover:text-pink-600 transition-colors" 
+                        <button class="stat-control-btn stat-btn-plus flex-shrink-0 w-10 h-10 rounded-lg border-2 border-gray-300 hover:border-pink-400 hover:bg-pink-50 flex items-center justify-center font-bold text-gray-600 hover:text-pink-600 transition-colors" 
                                 data-stat="${stat}" data-action="plus">
                             +
                         </button>
@@ -1469,13 +1479,13 @@
                     
                     <!-- Quick increment buttons -->
                     <div class="flex gap-2 justify-center">
-                        <button class="quick-add-btn px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded-full transition-colors" 
+                        <button class="quick-increment-btn quick-add-btn px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded-full transition-colors" 
                                 data-stat="${stat}" data-amount="10">+10</button>
-                        <button class="quick-add-btn px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded-full transition-colors" 
+                        <button class="quick-increment-btn quick-add-btn px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded-full transition-colors" 
                                 data-stat="${stat}" data-amount="25">+25</button>
-                        <button class="quick-add-btn px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded-full transition-colors" 
+                        <button class="quick-increment-btn quick-add-btn px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded-full transition-colors" 
                                 data-stat="${stat}" data-amount="50">+50</button>
-                        <button class="quick-add-btn px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded-full transition-colors" 
+                        <button class="quick-increment-btn quick-add-btn px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded-full transition-colors" 
                                 data-stat="${stat}" data-amount="100">+100</button>
                     </div>
                     
@@ -1489,8 +1499,39 @@
             // Add the stat planning container to the left panel
             leftPanel.appendChild(statPlanningContainer);
 
-            // Right side - Controls and recommendations
-            const rightPanel = createElement('div', 'space-y-4');
+            // Mobile Target Selectors (shown right after Quick Import on mobile)
+            const mobileSelectorsPanel = createElement('div', 'lg:hidden order-2');
+            mobileSelectorsPanel.innerHTML = `
+                <div class="bg-white bg-opacity-90 rounded-lg p-4 shadow-sm border border-gray-200 space-y-4">
+                    <div>
+                        <label class="block text-base font-semibold text-gray-800 mb-2">Target Style</label>
+                        <select id="mobile-style-select" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+                            ${STYLES.map(style => `
+                                <option value="${style}" ${appState.style === style ? 'selected' : ''}>
+                                    ${getStyleDisplayName(style)}
+                                </option>
+                            `).join('')}
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-base font-semibold text-gray-800 mb-2">Target Distance</label>
+                        <select id="mobile-distance-select" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+                            ${TRACK_TYPES.map(track => `
+                                <option value="${track}" ${appState.targetTrack === track ? 'selected' : ''}>
+                                    ${track.charAt(0).toUpperCase() + track.slice(1)}
+                                </option>
+                            `).join('')}
+                        </select>
+                    </div>
+                </div>
+            `;
+
+            // Mobile Training Recommendations (shown after Target Selectors on mobile)
+            const mobileTrainingPanel = createElement('div', 'lg:hidden order-3');
+            
+            // Right side - Controls and recommendations (reordered on mobile)
+            const rightPanel = createElement('div', 'space-y-4 order-4 lg:order-2');
             
             // Base stats reference
             const baseStatsPanel = createElement('div', 'bg-gray-50 rounded-lg p-4');
@@ -1512,8 +1553,8 @@
                 </div>
             `;
             
-            // Distance and style selectors
-            const selectors = createElement('div', 'bg-white bg-opacity-90 rounded-lg p-4 shadow-sm border border-gray-200 space-y-4');
+            // Distance and style selectors (hidden on mobile, shown on desktop)
+            const selectors = createElement('div', 'hidden lg:block bg-white bg-opacity-90 rounded-lg p-4 shadow-sm border border-gray-200 space-y-4');
             selectors.innerHTML = `
                 <div>
                     <label class="block text-base font-semibold text-gray-800 mb-2">Target Style</label>
@@ -1538,10 +1579,10 @@
                 </div>
             `;
 
-            // Training recommendations
+            // Training recommendations for both mobile and desktop
             if (trainingRecommendations.length > 0) {
-                const trainingPanel = createElement('div', 'bg-gray-50 rounded-lg p-4');
-                trainingPanel.innerHTML = `
+                // Create training recommendations HTML
+                const trainingHTML = `
                     <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center gap-2">
                         <span>${Icons.TrendingUp}</span>
                         Training Recommendations
@@ -1560,10 +1601,10 @@
                                             idx === 1 ? 'bg-blue-500' : 
                                             idx === 2 ? 'bg-yellow-500' : 'bg-gray-400'
                                         }">${idx + 1}</span>
-                                        <span class="font-medium">${training.name}</span>
+                                        <span class="font-medium text-sm sm:text-base">${training.name}</span>
                                     </div>
                                     <div class="text-right">
-                                        <div class="text-sm font-semibold text-gray-700">Value: ${training.totalValue}</div>
+                                        <div class="text-xs sm:text-sm font-semibold text-gray-700">Value: ${training.totalValue}</div>
                                         <div class="text-xs text-gray-500">Energy: ${training.energyCost > 0 ? `-${training.energyCost}` : `+${Math.abs(training.energyCost)}`}</div>
                                     </div>
                                 </div>
@@ -1575,8 +1616,20 @@
                         💡 Recommendations based on actual Uma Musume training mechanics: stat gains, energy costs, and secondary benefits.
                     </div>
                 `;
+
+                // Mobile training panel (shown right after Quick Import)
+                mobileTrainingPanel.innerHTML = `
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        ${trainingHTML}
+                    </div>
+                `;
+                
+                // Desktop training panel (hidden on mobile)
+                const desktopTrainingPanel = createElement('div', 'hidden lg:block bg-gray-50 rounded-lg p-4');
+                desktopTrainingPanel.innerHTML = trainingHTML;
+                
                 rightPanel.appendChild(selectors);
-                rightPanel.appendChild(trainingPanel);
+                rightPanel.appendChild(desktopTrainingPanel);
             }
 
             // Character advice panel
@@ -1726,6 +1779,8 @@
             rightPanel.appendChild(skillPanel);
             
             statsSection.appendChild(leftPanel);
+            statsSection.appendChild(mobileSelectorsPanel);
+            statsSection.appendChild(mobileTrainingPanel);
             statsSection.appendChild(rightPanel);
 
             // Event listeners for stat controls
@@ -1862,6 +1917,22 @@
                 const distanceSelect = document.getElementById('distance-select');
                 if (distanceSelect) {
                     distanceSelect.addEventListener('change', (e) => {
+                        updateAppState({ targetTrack: e.target.value });
+                    });
+                }
+
+                // Mobile Style selector
+                const mobileStyleSelect = document.getElementById('mobile-style-select');
+                if (mobileStyleSelect) {
+                    mobileStyleSelect.addEventListener('change', (e) => {
+                        updateAppState({ style: e.target.value });
+                    });
+                }
+
+                // Mobile Distance selector
+                const mobileDistanceSelect = document.getElementById('mobile-distance-select');
+                if (mobileDistanceSelect) {
+                    mobileDistanceSelect.addEventListener('change', (e) => {
                         updateAppState({ targetTrack: e.target.value });
                     });
                 }
