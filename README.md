@@ -169,15 +169,15 @@ High-potential characters with exceptional abilities:
 - Gold Ship, Symboli Rudolf, TM Opera O, Mejiro McQueen, Maruzensky
 - Agnes Tachyon, Mihono Bourbon, Biwa Hayahide, El Condor Pasa, Grass Wonder
 
-#### **⭐⭐ Solid Characters (9)**  
+#### **⭐⭐ Solid Characters (8)**  
 Reliable characters with strong capabilities:
 - Oguri Cap, Taiki Shuttle, Mejiro Ryan, King Halo, Air Groove
-- Super Creek, Matikanefukukitaru, Mayano Top Gun, Winning Ticket
+- Super Creek, Matikanefukukitaru, Mayano Top Gun
 
 #### **⭐ Starter Characters (8)**
 Perfect for beginners and budget builds:
 - Haru Urara, Nice Nature, Sakura Bakushin O, Yukino Bijin
-- Marvelous Sunday, Rice Shower, Eishin Flash, TM Opera O
+- Marvelous Sunday, Rice Shower, Eishin Flash, Winning Ticket
 
 ### **Data Accuracy**
 - ✅ **100% Accurate**: All data matches Global release exactly
