@@ -18,6 +18,10 @@
         const currentSearchInput = document.querySelector('#search-input');
         const wasSearchFocused = currentSearchInput && document.activeElement === currentSearchInput;
         const cursorPosition = wasSearchFocused ? currentSearchInput.selectionStart : null;
+        const searchValue = currentSearchInput ? currentSearchInput.value : '';
+        
+        // Enhanced mobile detection
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
         
         root.innerHTML = '';
         
@@ -26,14 +30,31 @@
             
             // Restore search input focus and cursor position after render
             if (wasSearchFocused) {
-                // Enhanced mobile focus preservation with multiple fallbacks
+                // Enhanced mobile focus preservation with aggressive restoration
                 const restoreFocus = () => {
                     const newSearchInput = document.querySelector('#search-input');
-                    if (newSearchInput && newSearchInput !== document.activeElement) {
-                        // Force focus with mobile-specific handling
-                        newSearchInput.focus();
+                    if (newSearchInput) {
+                        // Ensure value is preserved
+                        if (newSearchInput.value !== searchValue) {
+                            newSearchInput.value = searchValue;
+                        }
                         
-                        // Restore cursor position immediately
+                        // Force focus with mobile-specific handling
+                        if (newSearchInput !== document.activeElement) {
+                            newSearchInput.focus();
+                            
+                            // Mobile-specific focus forcing
+                            if (isMobile) {
+                                // Prevent blur events during focus restoration
+                                newSearchInput.style.webkitUserSelect = 'text';
+                                newSearchInput.style.userSelect = 'text';
+                                
+                                // Force focus with click simulation on mobile
+                                newSearchInput.click();
+                            }
+                        }
+                        
+                        // Restore cursor position
                         if (cursorPosition !== null) {
                             try {
                                 newSearchInput.setSelectionRange(cursorPosition, cursorPosition);
@@ -46,15 +67,27 @@
                     }
                 };
                 
-                // Multiple attempts with different timing for mobile compatibility
-                requestAnimationFrame(() => {
+                // More aggressive restoration on mobile
+                if (isMobile) {
+                    // Immediate attempt
                     restoreFocus();
                     
-                    // Additional fallbacks for stubborn mobile keyboards
-                    setTimeout(restoreFocus, 10);
-                    setTimeout(restoreFocus, 50);
-                    setTimeout(restoreFocus, 100);
-                });
+                    // Multiple fallbacks with longer delays for mobile
+                    requestAnimationFrame(() => {
+                        restoreFocus();
+                        setTimeout(restoreFocus, 10);
+                        setTimeout(restoreFocus, 50);
+                        setTimeout(restoreFocus, 100);
+                        setTimeout(restoreFocus, 200);
+                    });
+                } else {
+                    // Desktop restoration (less aggressive)
+                    requestAnimationFrame(() => {
+                        restoreFocus();
+                        setTimeout(restoreFocus, 10);
+                        setTimeout(restoreFocus, 50);
+                    });
+                }
             }
         } else if (appState.currentView === 'planner') {
             root.appendChild(createCharacterPlanner());

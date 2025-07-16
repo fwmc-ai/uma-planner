@@ -61,22 +61,38 @@
         
         const searchInput = searchContainer.querySelector('input');
         
-        // Enhanced mobile-friendly search input handling
+        // Enhanced mobile-friendly search input handling with longer delay for mobile
         let searchTimeout;
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+        
         searchInput.addEventListener('input', (e) => {
             clearTimeout(searchTimeout);
             
-            // Immediate update for responsiveness, but still debounce
+            // Longer delay on mobile to prevent keyboard closing
+            const delay = isMobile ? 300 : 50;
             searchTimeout = setTimeout(() => {
                 updateAppState({ searchTerm: e.target.value });
-            }, 50); // Reduced delay for better responsiveness
+            }, delay);
         });
         
-        // Prevent mobile keyboard issues
+        // Enhanced mobile keyboard preservation
         searchInput.addEventListener('focus', (e) => {
             // Ensure input stays focused on mobile
             e.target.style.webkitUserSelect = 'text';
             e.target.style.userSelect = 'text';
+            
+            // Prevent accidental blur on mobile
+            if (isMobile) {
+                e.target.addEventListener('blur', function preventBlur(blurEvent) {
+                    // Only prevent blur if it's happening during typing
+                    if (searchTimeout) {
+                        blurEvent.preventDefault();
+                        setTimeout(() => {
+                            e.target.focus();
+                        }, 10);
+                    }
+                }, { once: true });
+            }
         });
         
         // Additional mobile-specific event handling
