@@ -1,20 +1,20 @@
 {
-  "version": "1.2.4",
+  "version": "1.2.5",
   "release_date": "2025-07-16",
-  "release_name": "Terminology & Data Accuracy Patch",
-  "build_number": 7,
+  "release_name": "Global Release Character Accuracy",
+  "build_number": 8,
   "features": [
-    "Complete character database (31 characters with accurate rarities)",
+    "Complete character database (28 Global release characters with accurate rarities)",
     "Intelligent training recommendations",
     "Visual character portraits with costume system",
     "Professional background design and branding",
     "Progressive Web App with offline support",
     "Modular JavaScript architecture for maintainability"
   ],
-  "cache_version": "uma-planner-v1.2.4",
+  "cache_version": "uma-planner-v1.2.5",
   "data_version": "2025-07-16",
   "minimum_cache_clear": false,
-  "update_notes": "🔧 Terminology & Data Accuracy Patch! Fixed 'Wisdom' stat to correct 'Wit' terminology throughout entire codebase. Corrected character count from 32 to accurate 31 characters in all documentation. Maintains 100% game accuracy with proper in-game terminology.",
+  "update_notes": "🎯 Global Release Character Accuracy! Removed JP-only characters (Eishin Flash, Yukino Bijin, Marvelous Sunday) to maintain 100% Global release accuracy. Fixed character rarity assignments. Total: 28 characters (8★ + 8★★ + 12★★★) matching Global release exactly.",
   "compatibility": {
     "browsers": ["Chrome 80+", "Firefox 75+", "Safari 13+", "Edge 80+"],
     "mobile": true,

@@ -168,47 +168,6 @@
         uniqueSkill: "Behold Thine Emperor's Divine Might"
       },
       {
-        id: 'marvelous_sunday',
-        name: 'Marvelous Sunday',
-        rarity: 3,
-        defaultStyle: 'pace-chaser',
-        styles: ['pace-chaser', 'late-surger'],
-        aptitudes: { turf: 'A', dirt: 'F', sprint: 'G', mile: 'C', medium: 'A', long: 'B' },
-        runningStyles: { front: 'D', pace: 'A', late: 'A', end: 'C' },
-        statGrowth: { speed: 0, stamina: 0, power: 15, guts: 0, wit: 15 },
-        baseStats: { speed: 84, stamina: 87, power: 89, guts: 85, wit: 90 },
-        fanGoalThresholds: [10000, 15000],
-        image: '☀️',
-        uniqueSkill: 'GALmem. forever♪'
-      },
-      {
-        id: 'yukino_bijin',
-        name: 'Yukino Bijin',
-        rarity: 3,
-        defaultStyle: 'pace-chaser',
-        styles: ['front-runner', 'pace-chaser'],
-        aptitudes: { turf: 'A', dirt: 'B', sprint: 'D', mile: 'A', medium: 'A', long: 'E' },
-        runningStyles: { front: 'D', pace: 'A', late: 'B', end: 'C' },
-        statGrowth: { speed: 10, stamina: 0, power: 0, guts: 20, wit: 0 },
-        baseStats: { speed: 89, stamina: 79, power: 87, guts: 91, wit: 84 },
-        fanGoalThresholds: [3000, 10000],
-        image: '❄️',
-        uniqueSkill: "I'm Possible"
-      },
-      {
-        id: 'eishin_flash',
-        name: 'Eishin Flash',
-        rarity: 3,
-        defaultStyle: 'late-surger',
-        aptitudes: { turf: 'A', dirt: 'G', sprint: 'G', mile: 'F', medium: 'A', long: 'A' },
-        runningStyles: { front: 'E', pace: 'C', late: 'A', end: 'B' },
-        statGrowth: { speed: 0, stamina: 0, power: 10, guts: 0, wit: 20 },
-        baseStats: { speed: 100, stamina: 83, power: 93, guts: 82, wit: 92 },
-        fanGoalThresholds: [10000],
-        image: '⚡',
-        uniqueSkill: 'Schwarzes Schwert'
-      },
-      {
         id: 'tm_opera_o',
         name: 'T.M. Opera O',
         rarity: 3,

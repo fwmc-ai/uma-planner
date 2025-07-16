@@ -39,6 +39,8 @@ Thumbs.db
 # Local development files
 .claude/
 testing-notes.txt
+UMA_MUSUME_DATA_REFERENCE.md
+UMA_MUSUME_DATA_REFERENCE_RESPONSE.txt
 
 # Environment files
 .env

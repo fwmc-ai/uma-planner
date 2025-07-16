@@ -161,23 +161,23 @@ Each character card displays:
 
 ## 🗃️ Character Database
 
-### **Complete Global Release Roster (31 Characters)**
+### **Complete Global Release Roster (28 Characters)**
 
-#### **⭐⭐⭐ Premium Characters (15)**
+#### **⭐⭐⭐ Premium Characters (12)**
 High-potential characters with exceptional abilities:
-- Special Week, Silence Suzuka, Tokai Teio, Vodka, Daiwa Scarlet
-- Gold Ship, Symboli Rudolf, TM Opera O, Mejiro McQueen, Maruzensky
-- Agnes Tachyon, Mihono Bourbon, Biwa Hayahide, El Condor Pasa, Grass Wonder
+- Special Week, Silence Suzuka, Tokai Teio, Maruzensky, Oguri Cap
+- Taiki Shuttle, Mejiro McQueen, TM Opera O, Symboli Rudolf, Rice Shower
+- Mihono Bourbon, Biwa Hayahide
 
 #### **⭐⭐ Solid Characters (8)**  
 Reliable characters with strong capabilities:
-- Oguri Cap, Taiki Shuttle, Mejiro Ryan, King Halo, Air Groove
-- Super Creek, Matikanefukukitaru, Mayano Top Gun
+- Super Creek, Mayano Top Gun, Air Groove, El Condor Pasa
+- Grass Wonder, Daiwa Scarlet, Vodka, Gold Ship
 
 #### **⭐ Starter Characters (8)**
 Perfect for beginners and budget builds:
-- Haru Urara, Nice Nature, Sakura Bakushin O, Yukino Bijin
-- Marvelous Sunday, Rice Shower, Eishin Flash, Winning Ticket
+- Mejiro Ryan, Agnes Tachyon, Winning Ticket, Sakura Bakushin O
+- Haru Urara, Matikanefukukitaru, Nice Nature, King Halo
 
 ### **Data Accuracy**
 - ✅ **100% Accurate**: All data matches Global release exactly
