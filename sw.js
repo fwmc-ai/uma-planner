@@ -1,92 +1,91 @@
 // Uma Musume Career Planner - Service Worker
 // Version 1.1.0 - Mobile Experience Optimization
 
-const CACHE_NAME = 'uma-planner-v1.1.0';
-const STATIC_CACHE_NAME = 'uma-static-v1.1.0';
+const CACHE_NAME = 'uma-planner-v1.2.1-production';
+const STATIC_CACHE_NAME = 'uma-static-v1.2.1-production';
 
 // Files to cache for offline functionality
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/version.json',
-  '/css/styles.css',
-  '/data/characters.json',
-  '/data/thresholds.json',
-  '/logo.png',
-  '/nakayama_background.png',
-  // Tailwind CSS CDN
-  'https://cdn.tailwindcss.com'
+  './',
+  './index.html',
+  './manifest.json',
+  './version.json',
+  './css/styles.css',
+  './logo.png',
+  './nakayama_background.png',
+  './mobile-background.png',
+  // Tailwind CSS production version
+  'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css'
 ];
 
 // Character images - school uniforms
 const SCHOOL_IMAGES = [
-  '/umaicons/school/agnes_tachyon.webp',
-  '/umaicons/school/air_groove.webp',
-  '/umaicons/school/biwa_hayahide.webp',
-  '/umaicons/school/daiwa_scarlet.webp',
-  '/umaicons/school/eishin_flash.webp',
-  '/umaicons/school/el_condor_pasa.webp',
-  '/umaicons/school/gold_ship.webp',
-  '/umaicons/school/grass_wonder.webp',
-  '/umaicons/school/haru_urara.webp',
-  '/umaicons/school/king_halo.webp',
-  '/umaicons/school/maruzensky.webp',
-  '/umaicons/school/marvelous_sunday.webp',
-  '/umaicons/school/matikanefukukitaru.webp',
-  '/umaicons/school/mayano_top_gun.webp',
-  '/umaicons/school/mejiro_mcqueen.webp',
-  '/umaicons/school/mejiro_ryan.webp',
-  '/umaicons/school/mihono_bourbon.webp',
-  '/umaicons/school/nice_nature.webp',
-  '/umaicons/school/oguri_cap.webp',
-  '/umaicons/school/rice_shower.webp',
-  '/umaicons/school/sakura_bakushin_o.webp',
-  '/umaicons/school/silence_suzuka.webp',
-  '/umaicons/school/special_week.webp',
-  '/umaicons/school/super_creek.webp',
-  '/umaicons/school/symboli_rudolf.webp',
-  '/umaicons/school/taiki_shuttle.webp',
-  '/umaicons/school/tokai_teio.webp',
-  '/umaicons/school/vodka.webp',
-  '/umaicons/school/winning_ticket.webp',
-  '/umaicons/school/yukino_bijin.webp',
-  '/umaicons/school/tm_opera_o.webp'
+  './umaicons/school/agnes_tachyon.webp',
+  './umaicons/school/air_groove.webp',
+  './umaicons/school/biwa_hayahide.webp',
+  './umaicons/school/daiwa_scarlet.webp',
+  './umaicons/school/eishin_flash.webp',
+  './umaicons/school/el_condor_pasa.webp',
+  './umaicons/school/gold_ship.webp',
+  './umaicons/school/grass_wonder.webp',
+  './umaicons/school/haru_urara.webp',
+  './umaicons/school/king_halo.webp',
+  './umaicons/school/maruzensky.webp',
+  './umaicons/school/marvelous_sunday.webp',
+  './umaicons/school/matikanefukukitaru.webp',
+  './umaicons/school/mayano_top_gun.webp',
+  './umaicons/school/mejiro_mcqueen.webp',
+  './umaicons/school/mejiro_ryan.webp',
+  './umaicons/school/mihono_bourbon.webp',
+  './umaicons/school/nice_nature.webp',
+  './umaicons/school/oguri_cap.webp',
+  './umaicons/school/rice_shower.webp',
+  './umaicons/school/sakura_bakushin_o.webp',
+  './umaicons/school/silence_suzuka.webp',
+  './umaicons/school/special_week.webp',
+  './umaicons/school/super_creek.webp',
+  './umaicons/school/symboli_rudolf.webp',
+  './umaicons/school/taiki_shuttle.webp',
+  './umaicons/school/tokai_teio.webp',
+  './umaicons/school/vodka.webp',
+  './umaicons/school/winning_ticket.webp',
+  './umaicons/school/yukino_bijin.webp',
+  './umaicons/school/tm_opera_o.webp'
 ];
 
 // Character images - secondary outfits
 const SECONDARY_IMAGES = [
-  '/umaicons/secondary/agnes_tachyon.webp',
-  '/umaicons/secondary/air_groove.webp',
-  '/umaicons/secondary/daiwa_scarlet.webp',
-  '/umaicons/secondary/eishin_flash.webp',
-  '/umaicons/secondary/el_condor_pasa.webp',
-  '/umaicons/secondary/gold_ship.webp',
-  '/umaicons/secondary/grass_wonder.webp',
-  '/umaicons/secondary/haru_urara.webp',
-  '/umaicons/secondary/king_halo.webp',
-  '/umaicons/secondary/marvelous_sunday.webp',
-  '/umaicons/secondary/matikanefukukitaru.webp',
-  '/umaicons/secondary/mayano_top_gun.webp',
-  '/umaicons/secondary/mejiro_ryan.webp',
-  '/umaicons/secondary/sakura_bakushin_o.webp',
-  '/umaicons/secondary/super_creek.webp',
-  '/umaicons/secondary/vodka.webp',
-  '/umaicons/secondary/winning_ticket.webp',
-  '/umaicons/secondary/yukino_bijin.webp',
-  '/umaicons/secondary/biwa_hayahide.webp',
-  '/umaicons/secondary/maruzensky.webp',
-  '/umaicons/secondary/mejiro_mcqueen.webp',
-  '/umaicons/secondary/mihono_bourbon.webp',
-  '/umaicons/secondary/nice_nature.webp',
-  '/umaicons/secondary/oguri_cap.webp',
-  '/umaicons/secondary/rice_shower.webp',
-  '/umaicons/secondary/silence_suzuka.webp',
-  '/umaicons/secondary/special_week.webp',
-  '/umaicons/secondary/symboli_rudolf.webp',
-  '/umaicons/secondary/taiki_shuttle.webp',
-  '/umaicons/secondary/tm_opera_o.webp',
-  '/umaicons/secondary/tokai_teio.webp'
+  './umaicons/secondary/agnes_tachyon.webp',
+  './umaicons/secondary/air_groove.webp',
+  './umaicons/secondary/daiwa_scarlet.webp',
+  './umaicons/secondary/eishin_flash.webp',
+  './umaicons/secondary/el_condor_pasa.webp',
+  './umaicons/secondary/gold_ship.webp',
+  './umaicons/secondary/grass_wonder.webp',
+  './umaicons/secondary/haru_urara.webp',
+  './umaicons/secondary/king_halo.webp',
+  './umaicons/secondary/marvelous_sunday.webp',
+  './umaicons/secondary/matikanefukukitaru.webp',
+  './umaicons/secondary/mayano_top_gun.webp',
+  './umaicons/secondary/mejiro_ryan.webp',
+  './umaicons/secondary/sakura_bakushin_o.webp',
+  './umaicons/secondary/super_creek.webp',
+  './umaicons/secondary/vodka.webp',
+  './umaicons/secondary/winning_ticket.webp',
+  './umaicons/secondary/yukino_bijin.webp',
+  './umaicons/secondary/biwa_hayahide.webp',
+  './umaicons/secondary/maruzensky.webp',
+  './umaicons/secondary/mejiro_mcqueen.webp',
+  './umaicons/secondary/mihono_bourbon.webp',
+  './umaicons/secondary/nice_nature.webp',
+  './umaicons/secondary/oguri_cap.webp',
+  './umaicons/secondary/rice_shower.webp',
+  './umaicons/secondary/silence_suzuka.webp',
+  './umaicons/secondary/special_week.webp',
+  './umaicons/secondary/symboli_rudolf.webp',
+  './umaicons/secondary/taiki_shuttle.webp',
+  './umaicons/secondary/tm_opera_o.webp',
+  './umaicons/secondary/tokai_teio.webp'
 ];
 
 // All resources to cache
@@ -101,7 +100,17 @@ self.addEventListener('install', (event) => {
     caches.open(CACHE_NAME)
       .then((cache) => {
         console.log('🏇 Uma Musume Planner SW: Caching critical app assets');
-        return cache.addAll(STATIC_ASSETS);
+        // Cache files individually to handle missing files gracefully
+        return Promise.all(
+          STATIC_ASSETS.map(async (url) => {
+            try {
+              await cache.add(url);
+              console.log(`🏇 Uma Musume Planner SW: Cached ${url}`);
+            } catch (error) {
+              console.warn(`🏇 Uma Musume Planner SW: Failed to cache ${url}:`, error.message);
+            }
+          })
+        );
       })
       .then(() => {
         console.log('🏇 Uma Musume Planner SW: Critical assets cached, installing...');

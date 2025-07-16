@@ -38,12 +38,22 @@ body {
 /* Mobile-specific optimizations */
 @media (max-width: 768px) {
     body::before {
-        /* On mobile, use absolute positioning and ensure it covers the viewport */
+        /* On mobile, use custom mobile background image designed for single-column layout */
         position: absolute;
         min-height: 100vh;
+        height: 100%; /* Ensure it covers the entire page height */
         width: 100vw;
         background-attachment: scroll;
+        /* Use mobile-specific background image that matches the tall single-column layout */
+        background-image: url('../mobile-background.png');
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+        /* Slightly reduce opacity to ensure content readability */
+        opacity: 0.85;
     }
+    
+}
     
     /* Improve button touch targets on mobile */
     button {
