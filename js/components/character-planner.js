@@ -37,7 +37,7 @@
         const getStatColor = (value, threshold, stat) => {
             // Check for diminishing returns first
             if ((stat === 'speed' && value > 1200) || 
-                ((stat === 'guts' || stat === 'wisdom') && value > 400)) {
+                ((stat === 'guts' || stat === 'wit') && value > 400)) {
               return value >= threshold ? 'text-orange-500' : 'text-red-600';
             }
             
@@ -53,8 +53,8 @@
             if (stat === 'guts' && value > 400) {
               return STAT_EFFICIENCY.warnings.gutsOverInvest;
             }
-            if (stat === 'wisdom' && value > 400) {
-              return STAT_EFFICIENCY.warnings.wisdomOverInvest;
+            if (stat === 'wit' && value > 400) {
+              return STAT_EFFICIENCY.warnings.witOverInvest;
             }
             if (stat === 'stamina') {
               const excessiveThresholds = {
@@ -107,9 +107,9 @@
                     skillPoints: 2
                 },
                 {
-                    type: 'wisdom',
-                    name: 'Wisdom Training',
-                    primaryStat: 'wisdom',
+                    type: 'wit',
+                    name: 'Wit Training',
+                    primaryStat: 'wit',
                     primaryGain: 13,
                     secondaryStats: { speed: 4 },
                     energyCost: -5, // Restores energy
@@ -156,8 +156,8 @@
                 // Special bonuses
                 let specialNotes = [];
                 
-                // Wisdom training bonus (energy recovery + skill points)
-                if (training.type === 'wisdom') {
+                // Wit training bonus (energy recovery + skill points)
+                if (training.type === 'wit') {
                     specialNotes.push("Restores 5 energy");
                     specialNotes.push("Double skill points (+4 SP)");
                     totalValue += 10; // Bonus for utility
@@ -418,11 +418,11 @@
                 </h3>
                 <div class="text-xs text-blue-700 mb-2">
                     Enter 5 numbers in order:<br>
-                    Speed, Stamina, Power, Guts, Wisdom<br>
+                    Speed, Stamina, Power, Guts, Wit<br>
                     Any format works: "450 550 400 350 300" or "450, 550, 400, 350, 300"
                     <br><span class="font-medium">⌨️ Press Enter to import quickly!</span>
                 </div>
-                <textarea id="stats-import" placeholder="Enter 5 numbers separated by spaces/commas (Speed, Stamina, Power, Guts, Wisdom)" 
+                <textarea id="stats-import" placeholder="Enter 5 numbers separated by spaces/commas (Speed, Stamina, Power, Guts, Wit)" 
                           class="w-full px-3 py-2 text-sm border border-blue-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
                           rows="2"></textarea>
                 <div class="flex gap-2">
@@ -766,7 +766,7 @@
                     if (!text) return;
                     
                     let imported = 0;
-                    const stats = ['speed', 'stamina', 'power', 'guts', 'wisdom'];
+                    const stats = ['speed', 'stamina', 'power', 'guts', 'wit'];
                     let newStats = { ...appState.stats };
                     
                     // Method 1: Try parsing as simple numbers in order (most common)
@@ -790,7 +790,7 @@
                             stamina: /(?:stamina|st|スタミナ)[\s:]*(\d+)/i,
                             power: /(?:power|pw|パワー)[\s:]*(\d+)/i,
                             guts: /(?:guts|gt|根性)[\s:]*(\d+)/i,
-                            wisdom: /(?:wisdom|wi|wit|賢さ)[\s:]*(\d+)/i
+                            wit: /(?:wit|wi|wit|賢さ)[\s:]*(\d+)/i
                         };
                         
                         stats.forEach(stat => {
@@ -815,12 +815,12 @@
                         importText.value = '';
                         importText.placeholder = `✅ Imported ${imported} stats!`;
                         setTimeout(() => {
-                            importText.placeholder = 'Enter 5 numbers separated by spaces/commas (Speed, Stamina, Power, Guts, Wisdom)';
+                            importText.placeholder = 'Enter 5 numbers separated by spaces/commas (Speed, Stamina, Power, Guts, Wit)';
                         }, 2000);
                     } else {
                         importText.placeholder = '❌ Please enter 5 numbers (e.g., "450 550 400 350 300")';
                         setTimeout(() => {
-                            importText.placeholder = 'Enter 5 numbers separated by spaces/commas (Speed, Stamina, Power, Guts, Wisdom)';
+                            importText.placeholder = 'Enter 5 numbers separated by spaces/commas (Speed, Stamina, Power, Guts, Wit)';
                         }, 3000);
                     }
                 };
@@ -845,7 +845,7 @@
                     if (!character) return;
                     
                     // Reset all stats to character's actual base stats
-                    const stats = ['speed', 'stamina', 'power', 'guts', 'wisdom'];
+                    const stats = ['speed', 'stamina', 'power', 'guts', 'wit'];
                     let newStats = {};
                     stats.forEach(stat => {
                         const input = document.querySelector(`.stat-input[data-stat="${stat}"]`);

@@ -4,6 +4,45 @@
 
 ---
 
+## [2025-07-16] - Version 1.2.4: Terminology & Data Accuracy Patch
+
+### 🔧 **Critical Terminology & Data Corrections**
+
+#### Fixed: Stat Terminology Accuracy (CRITICAL)
+- **Issue**: "Wisdom" stat incorrectly named throughout codebase - should be "Wit" per in-game terminology
+- **Solution**: Comprehensive replacement of all "Wisdom"/"wisdom" references with "Wit"/"wit"
+- **Impact**: ✅ 100% game-accurate terminology maintained across entire application
+- **Files Updated**:
+  - `js/constants.js` - Character database and stat thresholds
+  - `js/state.js` - Application state management
+  - `js/components/character-planner.js` - UI components
+  - `js/character-advice.js` - Training advice system
+  - All documentation files (README.md, PROJECT_STATUS.md, UMA_MUSUME_DATA_REFERENCE.md)
+
+#### Fixed: Character Count Data Accuracy
+- **Issue**: Documentation incorrectly stated 32 characters when actual count is 31
+- **Solution**: Corrected all references to reflect accurate 31-character roster
+- **Impact**: ✅ Accurate data representation across all documentation
+- **Details**:
+  - README.md: "Complete Global Release Roster (31 Characters)"
+  - PROJECT_STATUS.md: "Complete 31-character roster"
+  - version.json: "31 characters with accurate rarities"
+  - UMA_MUSUME_DATA_REFERENCE.md: Updated character count references
+
+### 📊 **Data Integrity Verification**
+- **Character Database**: Confirmed exactly 31 characters in `js/constants.js`
+- **Terminology Consistency**: Zero remaining "wisdom" references - all converted to "wit"
+- **Documentation Accuracy**: All character count references corrected to 31
+- **Code Quality**: Maintains all existing functionality with improved accuracy
+
+### 🎯 **Quality Assurance Results**
+- **100% Terminology Accuracy**: All stats now match in-game naming conventions
+- **100% Data Accuracy**: Character count reflects actual roster size
+- **Zero Functional Impact**: All features work identically with corrected terminology
+- **Complete Coverage**: Every file with relevant references updated
+
+---
+
 ## [2025-07-16] - Version 1.2.3: Enhanced Mobile Experience Release
 
 ### 📱 **Critical Mobile UX Fixes**
@@ -204,7 +243,7 @@
 - **Memory**: Reduced memory footprint with modular loading
 
 #### **Functionality Verification**
-- **Character Display**: All 32 characters with correct rarity groupings
+- **Character Display**: All 31 characters with correct rarity groupings
 - **Training System**: Complete training recommendation system preserved
 - **Stat Planning**: All stat controls and calculations working identically
 - **Mobile Experience**: Responsive design and PWA functionality maintained

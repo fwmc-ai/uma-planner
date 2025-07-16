@@ -2,7 +2,7 @@
 
 > **A comprehensive training optimization tool for Uma Musume Pretty Derby Global**
 
-[![Version](https://img.shields.io/badge/version-1.2.3-blue.svg)](https://github.com/fwmc-ai/uma-planner/releases)
+[![Version](https://img.shields.io/badge/version-1.2.4-blue.svg)](https://github.com/fwmc-ai/uma-planner/releases)
 [![PWA](https://img.shields.io/badge/PWA-enabled-green.svg)](https://web.dev/progressive-web-apps/)
 [![Mobile](https://img.shields.io/badge/mobile-optimized-brightgreen.svg)](https://fwmc-ai.github.io/uma-planner/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -37,7 +37,7 @@ The Uma Musume Pretty Derby Career Planner is a **Progressive Web Application (P
 ## ✨ Features
 
 ### 🏆 **Core Features**
-- **Complete Character Database**: All 32 Global release characters with accurate data
+- **Complete Character Database**: All 31 Global release characters with accurate data
 - **Intelligent Training Recommendations**: Real Uma Musume mechanics-based advice
 - **Interactive Stat Planning**: Visual controls with real-time threshold analysis
 - **Multiple Running Style Support**: Characters display all viable running styles
@@ -117,7 +117,7 @@ Each character card displays:
 
 #### **Quick Import Stats**
 **Fastest way to input your current stats:**
-1. **Enter 5 numbers** in order: `Speed, Stamina, Power, Guts, Wisdom`
+1. **Enter 5 numbers** in order: `Speed, Stamina, Power, Guts, Wit`
 2. **Any format works**: `450 550 400 350 300` or `450, 550, 400, 350, 300`
 3. **Press Enter** for instant import
 4. **Reset to Base** button restores character's starting stats
@@ -161,7 +161,7 @@ Each character card displays:
 
 ## 🗃️ Character Database
 
-### **Complete Global Release Roster (32 Characters)**
+### **Complete Global Release Roster (31 Characters)**
 
 #### **⭐⭐⭐ Premium Characters (15)**
 High-potential characters with exceptional abilities:
@@ -214,7 +214,7 @@ Each distance/style combination has optimal stat requirements:
 **Diminishing Returns Thresholds:**
 - **Speed**: Efficiency drops after 1200
 - **Guts**: Over-investment after 400  
-- **Wisdom**: Limited benefit after 400
+- **Wit**: Limited benefit after 400
 - **Stamina**: Varies by distance, excess wastes training
 
 ### **Smart Training Advisor**
@@ -351,6 +351,12 @@ We welcome contributions! Please see our contributing guidelines:
 - **Features**: New training tools and analysis features
 
 ## 📋 Changelog
+
+### **Version 1.2.4 - Terminology & Data Accuracy Patch (2025-07-16)**
+- **🔧 Fixed**: Corrected "Wisdom" stat to proper "Wit" terminology throughout codebase
+- **📊 Enhanced**: Updated character count from 32 to accurate 31 characters in all documentation
+- **✅ Verified**: 100% game accuracy with proper in-game terminology
+- **💯 Maintained**: All functionality preserved with improved data accuracy
 
 ### **Version 1.2.3 - Enhanced Mobile Experience (2025-07-16)**
 - **🔧 Fixed**: Critical mobile search keyboard persistence issue

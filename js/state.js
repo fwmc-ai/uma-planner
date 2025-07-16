@@ -23,7 +23,7 @@
             stamina: 300,
             power: 300,
             guts: 300,
-            wisdom: 300
+            wit: 300
         }
     };
 

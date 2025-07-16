@@ -1,20 +1,20 @@
 {
-  "version": "1.2.3",
-  "release_date": "2025-07-16", 
-  "release_name": "Enhanced Mobile Experience Release",
-  "build_number": 6,
+  "version": "1.2.4",
+  "release_date": "2025-07-16",
+  "release_name": "Terminology & Data Accuracy Patch",
+  "build_number": 7,
   "features": [
-    "Complete character database (32 characters with accurate rarities)",
+    "Complete character database (31 characters with accurate rarities)",
     "Intelligent training recommendations",
     "Visual character portraits with costume system",
     "Professional background design and branding",
     "Progressive Web App with offline support",
     "Modular JavaScript architecture for maintainability"
   ],
-  "cache_version": "uma-planner-v1.2.3",
+  "cache_version": "uma-planner-v1.2.4",
   "data_version": "2025-07-16",
   "minimum_cache_clear": false,
-  "update_notes": "📱 Enhanced Mobile Experience! Fixed critical mobile search keyboard persistence, improved layout alignment with bubble formatting, repositioned target selectors for better workflow, added scroll-to-top navigation, and implemented clickable logo functionality. Perfect mobile UX with responsive design.",
+  "update_notes": "🔧 Terminology & Data Accuracy Patch! Fixed 'Wisdom' stat to correct 'Wit' terminology throughout entire codebase. Corrected character count from 32 to accurate 31 characters in all documentation. Maintains 100% game accuracy with proper in-game terminology.",
   "compatibility": {
     "browsers": ["Chrome 80+", "Firefox 75+", "Safari 13+", "Edge 80+"],
     "mobile": true,

@@ -23,8 +23,8 @@
         defaultStyle: 'pace-chaser',
         aptitudes: { turf: 'A', dirt: 'F', sprint: 'F', mile: 'C', medium: 'A', long: 'A' },
         runningStyles: { front: 'E', pace: 'A', late: 'B', end: 'E' },
-        statGrowth: { speed: 0, stamina: 0, power: 0, guts: 10, wisdom: 20 },
-        baseStats: { speed: 85, stamina: 93, power: 82, guts: 93, wisdom: 97 },
+        statGrowth: { speed: 0, stamina: 0, power: 0, guts: 10, wit: 20 },
+        baseStats: { speed: 85, stamina: 93, power: 82, guts: 93, wit: 97 },
         fanGoalThresholds: [8000],
         image: '🏇',
         uniqueSkill: '∴win Q.E.D.'
@@ -37,8 +37,8 @@
         styles: ['front-runner', 'pace-chaser'],
         aptitudes: { turf: 'A', dirt: 'G', sprint: 'C', mile: 'B', medium: 'A', long: 'B' },
         runningStyles: { front: 'A', pace: 'B', late: 'E', end: 'G' },
-        statGrowth: { speed: 0, stamina: 20, power: 10, guts: 0, wisdom: 0 },
-        baseStats: { speed: 82, stamina: 92, power: 88, guts: 85, wisdom: 89 },
+        statGrowth: { speed: 0, stamina: 20, power: 10, guts: 0, wit: 0 },
+        baseStats: { speed: 82, stamina: 92, power: 88, guts: 85, wit: 89 },
         fanGoalThresholds: [5000],
         image: '🤖',
         uniqueSkill: 'G00 1st. F∞'
@@ -53,8 +53,8 @@
         styles: ['pace-chaser', 'late-surger'],
         aptitudes: { turf: 'A', dirt: 'G', sprint: 'F', mile: 'C', medium: 'A', long: 'A' },
         runningStyles: { front: 'G', pace: 'A', late: 'A', end: 'C' },
-        statGrowth: { speed: 0, stamina: 20, power: 0, guts: 0, wisdom: 10 },
-        baseStats: { speed: 83, stamina: 88, power: 98, guts: 90, wisdom: 91 },
+        statGrowth: { speed: 0, stamina: 20, power: 0, guts: 0, wit: 10 },
+        baseStats: { speed: 83, stamina: 88, power: 98, guts: 90, wit: 91 },
         fanGoalThresholds: [5000],
         image: '🌟',
         uniqueSkill: 'Shooting Star'
@@ -66,8 +66,8 @@
         defaultStyle: 'front-runner',
         aptitudes: { turf: 'A', dirt: 'G', sprint: 'D', mile: 'A', medium: 'A', long: 'E' },
         runningStyles: { front: 'A', pace: 'C', late: 'E', end: 'G' },
-        statGrowth: { speed: 20, stamina: 0, power: 0, guts: 10, wisdom: 0 },
-        baseStats: { speed: 101, stamina: 84, power: 77, guts: 100, wisdom: 88 },
+        statGrowth: { speed: 20, stamina: 0, power: 0, guts: 10, wit: 0 },
+        baseStats: { speed: 101, stamina: 84, power: 77, guts: 100, wit: 88 },
         fanGoalThresholds: [5000],
         image: '🌸',
         uniqueSkill: "I'm Not Giving Up the Lead...!"
@@ -79,8 +79,8 @@
         defaultStyle: 'pace-chaser',
         aptitudes: { turf: 'A', dirt: 'G', sprint: 'F', mile: 'E', medium: 'A', long: 'B' },
         runningStyles: { front: 'C', pace: 'A', late: 'B', end: 'E' },
-        statGrowth: { speed: 20, stamina: 10, power: 0, guts: 0, wisdom: 0 },
-        baseStats: { speed: 90, stamina: 89, power: 83, guts: 92, wisdom: 96 },
+        statGrowth: { speed: 20, stamina: 10, power: 0, guts: 0, wit: 0 },
+        baseStats: { speed: 90, stamina: 89, power: 83, guts: 92, wit: 96 },
         fanGoalThresholds: [5000],
         image: '👑',
         uniqueSkill: 'Sky-High Teio Step'
@@ -93,8 +93,8 @@
         styles: ['front-runner', 'pace-chaser'],
         aptitudes: { turf: 'A', dirt: 'D', sprint: 'B', mile: 'A', medium: 'B', long: 'C' },
         runningStyles: { front: 'A', pace: 'B', late: 'D', end: 'E' },
-        statGrowth: { speed: 10, stamina: 0, power: 0, guts: 0, wisdom: 20 },
-        baseStats: { speed: 88, stamina: 84, power: 86, guts: 95, wisdom: 92 },
+        statGrowth: { speed: 10, stamina: 0, power: 0, guts: 0, wit: 20 },
+        baseStats: { speed: 88, stamina: 84, power: 86, guts: 95, wit: 92 },
         fanGoalThresholds: [3000],
         image: '🌺',
         uniqueSkill: 'Red Shift/LP1211-M'
@@ -107,8 +107,8 @@
         styles: ['pace-chaser', 'late-surger'],
         aptitudes: { turf: 'A', dirt: 'B', sprint: 'E', mile: 'A', medium: 'A', long: 'B' },
         runningStyles: { front: 'C', pace: 'A', late: 'A', end: 'B' },
-        statGrowth: { speed: 20, stamina: 0, power: 10, guts: 0, wisdom: 0 },
-        baseStats: { speed: 101, stamina: 66, power: 106, guts: 84, wisdom: 93 },
+        statGrowth: { speed: 20, stamina: 0, power: 10, guts: 0, wit: 0 },
+        baseStats: { speed: 101, stamina: 66, power: 106, guts: 84, wit: 93 },
         fanGoalThresholds: [10000],
         image: '🏆',
         uniqueSkill: 'Triumphant Pulse'
@@ -120,8 +120,8 @@
         defaultStyle: 'pace-chaser',
         aptitudes: { turf: 'A', dirt: 'G', sprint: 'E', mile: 'C', medium: 'A', long: 'A' },
         runningStyles: { front: 'E', pace: 'A', late: 'B', end: 'C' },
-        statGrowth: { speed: 0, stamina: 10, power: 0, guts: 20, wisdom: 0 },
-        baseStats: { speed: 71, stamina: 117, power: 70, guts: 102, wisdom: 90 },
+        statGrowth: { speed: 0, stamina: 10, power: 0, guts: 20, wit: 0 },
+        baseStats: { speed: 71, stamina: 117, power: 70, guts: 102, wit: 90 },
         fanGoalThresholds: [5000, 15000],
         image: '🌧️',
         uniqueSkill: 'Blue Rose Closer'
@@ -134,8 +134,8 @@
         styles: ['front-runner', 'pace-chaser'],
         aptitudes: { turf: 'A', dirt: 'B', sprint: 'A', mile: 'A', medium: 'E', long: 'G' },
         runningStyles: { front: 'B', pace: 'A', late: 'C', end: 'E' },
-        statGrowth: { speed: 20, stamina: 0, power: 0, guts: 0, wisdom: 10 },
-        baseStats: { speed: 96, stamina: 71, power: 98, guts: 93, wisdom: 92 },
+        statGrowth: { speed: 20, stamina: 0, power: 0, guts: 0, wit: 10 },
+        baseStats: { speed: 96, stamina: 71, power: 98, guts: 93, wit: 92 },
         fanGoalThresholds: [10000],
         image: '✈️',
         uniqueSkill: 'Shooting for Victory!'
@@ -147,8 +147,8 @@
         defaultStyle: 'pace-chaser',
         aptitudes: { turf: 'A', dirt: 'E', sprint: 'G', mile: 'F', medium: 'A', long: 'A' },
         runningStyles: { front: 'B', pace: 'A', late: 'C', end: 'E' },
-        statGrowth: { speed: 0, stamina: 20, power: 0, guts: 0, wisdom: 10 },
-        baseStats: { speed: 78, stamina: 108, power: 85, guts: 88, wisdom: 91 },
+        statGrowth: { speed: 0, stamina: 20, power: 0, guts: 0, wit: 10 },
+        baseStats: { speed: 78, stamina: 108, power: 85, guts: 88, wit: 91 },
         fanGoalThresholds: [15000],
         image: '👸',
         uniqueSkill: 'The Duty of Dignity Calls'
@@ -161,8 +161,8 @@
         styles: ['pace-chaser', 'late-surger'],
         aptitudes: { turf: 'A', dirt: 'G', sprint: 'E', mile: 'C', medium: 'A', long: 'A' },
         runningStyles: { front: 'C', pace: 'A', late: 'A', end: 'B' },
-        statGrowth: { speed: 0, stamina: 20, power: 0, guts: 10, wisdom: 0 },
-        baseStats: { speed: 86, stamina: 91, power: 83, guts: 96, wisdom: 94 },
+        statGrowth: { speed: 0, stamina: 20, power: 0, guts: 10, wit: 0 },
+        baseStats: { speed: 86, stamina: 91, power: 83, guts: 96, wit: 94 },
         fanGoalThresholds: [20000],
         image: '⚜️',
         uniqueSkill: "Behold Thine Emperor's Divine Might"
@@ -175,8 +175,8 @@
         styles: ['pace-chaser', 'late-surger'],
         aptitudes: { turf: 'A', dirt: 'F', sprint: 'G', mile: 'C', medium: 'A', long: 'B' },
         runningStyles: { front: 'D', pace: 'A', late: 'A', end: 'C' },
-        statGrowth: { speed: 0, stamina: 0, power: 15, guts: 0, wisdom: 15 },
-        baseStats: { speed: 84, stamina: 87, power: 89, guts: 85, wisdom: 90 },
+        statGrowth: { speed: 0, stamina: 0, power: 15, guts: 0, wit: 15 },
+        baseStats: { speed: 84, stamina: 87, power: 89, guts: 85, wit: 90 },
         fanGoalThresholds: [10000, 15000],
         image: '☀️',
         uniqueSkill: 'GALmem. forever♪'
@@ -189,8 +189,8 @@
         styles: ['front-runner', 'pace-chaser'],
         aptitudes: { turf: 'A', dirt: 'B', sprint: 'D', mile: 'A', medium: 'A', long: 'E' },
         runningStyles: { front: 'D', pace: 'A', late: 'B', end: 'C' },
-        statGrowth: { speed: 10, stamina: 0, power: 0, guts: 20, wisdom: 0 },
-        baseStats: { speed: 89, stamina: 79, power: 87, guts: 91, wisdom: 84 },
+        statGrowth: { speed: 10, stamina: 0, power: 0, guts: 20, wit: 0 },
+        baseStats: { speed: 89, stamina: 79, power: 87, guts: 91, wit: 84 },
         fanGoalThresholds: [3000, 10000],
         image: '❄️',
         uniqueSkill: "I'm Possible"
@@ -202,8 +202,8 @@
         defaultStyle: 'late-surger',
         aptitudes: { turf: 'A', dirt: 'G', sprint: 'G', mile: 'F', medium: 'A', long: 'A' },
         runningStyles: { front: 'E', pace: 'C', late: 'A', end: 'B' },
-        statGrowth: { speed: 0, stamina: 0, power: 10, guts: 0, wisdom: 20 },
-        baseStats: { speed: 100, stamina: 83, power: 93, guts: 82, wisdom: 92 },
+        statGrowth: { speed: 0, stamina: 0, power: 10, guts: 0, wit: 20 },
+        baseStats: { speed: 100, stamina: 83, power: 93, guts: 82, wit: 92 },
         fanGoalThresholds: [10000],
         image: '⚡',
         uniqueSkill: 'Schwarzes Schwert'
@@ -216,8 +216,8 @@
         styles: ['pace-chaser', 'late-surger'],
         aptitudes: { turf: 'A', dirt: 'G', sprint: 'G', mile: 'F', medium: 'A', long: 'A' },
         runningStyles: { front: 'E', pace: 'A', late: 'B', end: 'C' },
-        statGrowth: { speed: 0, stamina: 20, power: 0, guts: 0, wisdom: 10 },
-        baseStats: { speed: 75, stamina: 108, power: 75, guts: 102, wisdom: 90 },
+        statGrowth: { speed: 0, stamina: 20, power: 0, guts: 0, wit: 10 },
+        baseStats: { speed: 75, stamina: 108, power: 75, guts: 102, wit: 90 },
         fanGoalThresholds: [15000],
         image: '🎭',
         uniqueSkill: 'Operatic Finale'
@@ -232,8 +232,8 @@
         styles: ['late-surger', 'end-closer'],
         aptitudes: { turf: 'A', dirt: 'G', sprint: 'G', mile: 'C', medium: 'A', long: 'A' },
         runningStyles: { front: 'G', pace: 'E', late: 'B', end: 'A' },
-        statGrowth: { speed: 0, stamina: 20, power: 10, guts: 0, wisdom: 0 },
-        baseStats: { speed: 82, stamina: 96, power: 100, guts: 77, wisdom: 70 },
+        statGrowth: { speed: 0, stamina: 20, power: 10, guts: 0, wit: 0 },
+        baseStats: { speed: 82, stamina: 96, power: 100, guts: 77, wit: 70 },
         fanGoalThresholds: [3000, 6000, 10000],
         image: '🚢',
         uniqueSkill: 'Warning Shot!'
@@ -246,8 +246,8 @@
         styles: ['pace-chaser', 'late-surger'],
         aptitudes: { turf: 'A', dirt: 'G', sprint: 'F', mile: 'A', medium: 'A', long: 'F' },
         runningStyles: { front: 'E', pace: 'C', late: 'A', end: 'B' },
-        statGrowth: { speed: 10, stamina: 0, power: 20, guts: 0, wisdom: 0 },
-        baseStats: { speed: 96, stamina: 61, power: 105, guts: 75, wisdom: 88 },
+        statGrowth: { speed: 10, stamina: 0, power: 20, guts: 0, wit: 0 },
+        baseStats: { speed: 96, stamina: 61, power: 105, guts: 75, wit: 88 },
         fanGoalThresholds: [2000, 5000, 8000],
         image: '🍸',
         uniqueSkill: 'Xceleration'
@@ -260,8 +260,8 @@
         styles: ['front-runner', 'pace-chaser'],
         aptitudes: { turf: 'A', dirt: 'G', sprint: 'F', mile: 'A', medium: 'A', long: 'B' },
         runningStyles: { front: 'A', pace: 'A', late: 'D', end: 'E' },
-        statGrowth: { speed: 10, stamina: 0, power: 0, guts: 20, wisdom: 0 },
-        baseStats: { speed: 84, stamina: 77, power: 79, guts: 95, wisdom: 90 },
+        statGrowth: { speed: 10, stamina: 0, power: 0, guts: 20, wit: 0 },
+        baseStats: { speed: 84, stamina: 77, power: 79, guts: 95, wit: 90 },
         fanGoalThresholds: [3000, 8000, 10000],
         image: '🌹',
         uniqueSkill: 'Red Ace'
@@ -274,8 +274,8 @@
         styles: ['front-runner', 'pace-chaser'],
         aptitudes: { turf: 'A', dirt: 'E', sprint: 'E', mile: 'C', medium: 'A', long: 'A' },
         runningStyles: { front: 'C', pace: 'A', late: 'B', end: 'D' },
-        statGrowth: { speed: 0, stamina: 20, power: 0, guts: 10, wisdom: 0 },
-        baseStats: { speed: 73, stamina: 100, power: 67, guts: 95, wisdom: 90 },
+        statGrowth: { speed: 0, stamina: 20, power: 0, guts: 10, wit: 0 },
+        baseStats: { speed: 73, stamina: 100, power: 67, guts: 95, wit: 90 },
         fanGoalThresholds: [10000],
         image: '✈️',
         uniqueSkill: '1st Place Kiss☆'
@@ -287,8 +287,8 @@
         defaultStyle: 'pace-chaser',
         aptitudes: { turf: 'A', dirt: 'G', sprint: 'G', mile: 'G', medium: 'A', long: 'A' },
         runningStyles: { front: 'C', pace: 'A', late: 'B', end: 'E' },
-        statGrowth: { speed: 0, stamina: 10, power: 0, guts: 0, wisdom: 20 },
-        baseStats: { speed: 76, stamina: 106, power: 75, guts: 98, wisdom: 97 },
+        statGrowth: { speed: 0, stamina: 10, power: 0, guts: 0, wit: 20 },
+        baseStats: { speed: 76, stamina: 106, power: 75, guts: 98, wit: 97 },
         fanGoalThresholds: [5000, 9000],
         image: '🏞️',
         uniqueSkill: 'Clear Heart'
@@ -301,8 +301,8 @@
         styles: ['pace-chaser', 'late-surger'],
         aptitudes: { turf: 'A', dirt: 'G', sprint: 'G', mile: 'A', medium: 'B', long: 'A' },
         runningStyles: { front: 'D', pace: 'A', late: 'A', end: 'C' },
-        statGrowth: { speed: 20, stamina: 0, power: 10, guts: 0, wisdom: 0 },
-        baseStats: { speed: 91, stamina: 83, power: 97, guts: 79, wisdom: 100 },
+        statGrowth: { speed: 20, stamina: 0, power: 10, guts: 0, wit: 0 },
+        baseStats: { speed: 91, stamina: 83, power: 97, guts: 79, wit: 100 },
         fanGoalThresholds: [1500, 4000, 8000],
         image: '🌱',
         uniqueSkill: 'Focused Mind'
@@ -315,8 +315,8 @@
         styles: ['pace-chaser', 'late-surger'],
         aptitudes: { turf: 'A', dirt: 'B', sprint: 'F', mile: 'A', medium: 'A', long: 'B' },
         runningStyles: { front: 'B', pace: 'A', late: 'B', end: 'D' },
-        statGrowth: { speed: 20, stamina: 0, power: 0, guts: 0, wisdom: 10 },
-        baseStats: { speed: 100, stamina: 75, power: 91, guts: 97, wisdom: 87 },
+        statGrowth: { speed: 20, stamina: 0, power: 0, guts: 0, wit: 10 },
+        baseStats: { speed: 100, stamina: 75, power: 91, guts: 97, wit: 87 },
         fanGoalThresholds: [3000, 10000],
         image: '🦅',
         uniqueSkill: 'Corazón ☆ Ardiente'
@@ -329,8 +329,8 @@
         styles: ['pace-chaser', 'late-surger'],
         aptitudes: { turf: 'A', dirt: 'E', sprint: 'E', mile: 'B', medium: 'A', long: 'A' },
         runningStyles: { front: 'C', pace: 'A', late: 'B', end: 'D' },
-        statGrowth: { speed: 10, stamina: 0, power: 10, guts: 10, wisdom: 0 },
-        baseStats: { speed: 94, stamina: 82, power: 91, guts: 88, wisdom: 95 },
+        statGrowth: { speed: 10, stamina: 0, power: 10, guts: 10, wit: 0 },
+        baseStats: { speed: 94, stamina: 82, power: 91, guts: 88, wit: 95 },
         fanGoalThresholds: [8000, 10000],
         image: '💨',
         uniqueSkill: "Empress's Pride"
@@ -345,8 +345,8 @@
         styles: ['pace-chaser', 'late-surger'],
         aptitudes: { turf: 'A', dirt: 'D', sprint: 'D', mile: 'C', medium: 'A', long: 'A' },
         runningStyles: { front: 'D', pace: 'A', late: 'B', end: 'C' },
-        statGrowth: { speed: 0, stamina: 0, power: 20, guts: 0, wisdom: 10 },
-        baseStats: { speed: 82, stamina: 85, power: 89, guts: 78, wisdom: 86 },
+        statGrowth: { speed: 0, stamina: 0, power: 20, guts: 0, wit: 10 },
+        baseStats: { speed: 82, stamina: 85, power: 89, guts: 78, wit: 86 },
         fanGoalThresholds: [5000, 9000],
         image: '🦁',
         uniqueSkill: 'Feel the Burn!'
@@ -359,8 +359,8 @@
         styles: ['pace-chaser', 'late-surger'],
         aptitudes: { turf: 'A', dirt: 'D', sprint: 'E', mile: 'B', medium: 'A', long: 'B' },
         runningStyles: { front: 'D', pace: 'A', late: 'B', end: 'C' },
-        statGrowth: { speed: 20, stamina: 0, power: 0, guts: 10, wisdom: 0 },
-        baseStats: { speed: 82, stamina: 76, power: 76, guts: 79, wisdom: 87 },
+        statGrowth: { speed: 20, stamina: 0, power: 0, guts: 10, wit: 0 },
+        baseStats: { speed: 82, stamina: 76, power: 76, guts: 79, wit: 87 },
         fanGoalThresholds: [4000, 8000],
         image: '🔬',
         uniqueSkill: 'Introduction to Physiology'
@@ -373,8 +373,8 @@
         styles: ['late-surger', 'end-closer'],
         aptitudes: { turf: 'A', dirt: 'G', sprint: 'G', mile: 'F', medium: 'A', long: 'B' },
         runningStyles: { front: 'G', pace: 'D', late: 'A', end: 'B' },
-        statGrowth: { speed: 0, stamina: 10, power: 20, guts: 0, wisdom: 0 },
-        baseStats: { speed: 87, stamina: 68, power: 91, guts: 74, wisdom: 80 },
+        statGrowth: { speed: 0, stamina: 10, power: 20, guts: 0, wit: 0 },
+        baseStats: { speed: 87, stamina: 68, power: 91, guts: 74, wit: 80 },
         fanGoalThresholds: [3000, 8000],
         image: '🎫',
         uniqueSkill: 'V Is for Victory!'
@@ -387,8 +387,8 @@
         styles: ['front-runner', 'pace-chaser'],
         aptitudes: { turf: 'A', dirt: 'G', sprint: 'A', mile: 'E', medium: 'G', long: 'G' },
         runningStyles: { front: 'A', pace: 'C', late: 'G', end: 'G' },
-        statGrowth: { speed: 20, stamina: 0, power: 0, guts: 10, wisdom: 0 },
-        baseStats: { speed: 87, stamina: 54, power: 93, guts: 85, wisdom: 81 },
+        statGrowth: { speed: 20, stamina: 0, power: 0, guts: 10, wit: 0 },
+        baseStats: { speed: 87, stamina: 54, power: 93, guts: 85, wit: 81 },
         fanGoalThresholds: [1000, 3000, 5000],
         image: '🌸',
         uniqueSkill: 'Class Rep + Speed = Bakushin'
@@ -400,8 +400,8 @@
         defaultStyle: 'late-surger',
         aptitudes: { turf: 'E', dirt: 'A', sprint: 'B', mile: 'C', medium: 'F', long: 'G' },
         runningStyles: { front: 'G', pace: 'E', late: 'B', end: 'A' },
-        statGrowth: { speed: 0, stamina: 0, power: 10, guts: 20, wisdom: 0 },
-        baseStats: { speed: 83, stamina: 58, power: 89, guts: 86, wisdom: 84 },
+        statGrowth: { speed: 0, stamina: 0, power: 10, guts: 20, wit: 0 },
+        baseStats: { speed: 83, stamina: 58, power: 89, guts: 86, wit: 84 },
         fanGoalThresholds: [5000, 9000],
         image: '🌻',
         uniqueSkill: 'Super-Duper Stoked'
@@ -413,8 +413,8 @@
         defaultStyle: 'late-surger',
         aptitudes: { turf: 'A', dirt: 'E', sprint: 'C', mile: 'B', medium: 'A', long: 'A' },
         runningStyles: { front: 'D', pace: 'A', late: 'B', end: 'C' },
-        statGrowth: { speed: 0, stamina: 20, power: 10, guts: 0, wisdom: 0 },
-        baseStats: { speed: 77, stamina: 81, power: 88, guts: 81, wisdom: 73 },
+        statGrowth: { speed: 0, stamina: 20, power: 10, guts: 0, wit: 0 },
+        baseStats: { speed: 77, stamina: 81, power: 88, guts: 81, wit: 73 },
         fanGoalThresholds: [4000, 8000],
         image: '🍀',
         uniqueSkill: 'Luck Be with Me!'
@@ -427,8 +427,8 @@
         styles: ['late-surger', 'end-closer'],
         aptitudes: { turf: 'A', dirt: 'D', sprint: 'D', mile: 'B', medium: 'A', long: 'B' },
         runningStyles: { front: 'G', pace: 'C', late: 'A', end: 'B' },
-        statGrowth: { speed: 0, stamina: 0, power: 20, guts: 0, wisdom: 10 },
-        baseStats: { speed: 86, stamina: 72, power: 89, guts: 69, wisdom: 84 },
+        statGrowth: { speed: 0, stamina: 0, power: 20, guts: 0, wit: 10 },
+        baseStats: { speed: 86, stamina: 72, power: 89, guts: 69, wit: 84 },
         fanGoalThresholds: [3000, 7000],
         image: '🥉',
         uniqueSkill: 'I Can Win Sometimes, Right?'
@@ -440,8 +440,8 @@
         defaultStyle: 'late-surger',
         aptitudes: { turf: 'A', dirt: 'F', sprint: 'B', mile: 'A', medium: 'B', long: 'D' },
         runningStyles: { front: 'C', pace: 'A', late: 'B', end: 'D' },
-        statGrowth: { speed: 0, stamina: 0, power: 20, guts: 10, wisdom: 0 },
-        baseStats: { speed: 87, stamina: 60, power: 93, guts: 73, wisdom: 87 },
+        statGrowth: { speed: 0, stamina: 0, power: 20, guts: 10, wit: 0 },
+        baseStats: { speed: 87, stamina: 60, power: 93, guts: 73, wit: 87 },
         fanGoalThresholds: [3000, 6000],
         image: '👸',
         uniqueSkill: 'Call Me King'
@@ -451,39 +451,39 @@
     // Updated stat thresholds with accurate data from comprehensive guide
     const STAT_THRESHOLDS = {
       sprint: {
-        'front-runner': { speed: 750, stamina: 300, power: 350, guts: 300, wisdom: 300 },
-        'pace-chaser': { speed: 650, stamina: 350, power: 500, guts: 300, wisdom: 300 },
-        'late-surger': { speed: 550, stamina: 400, power: 600, guts: 300, wisdom: 300 },
-        'end-closer': { speed: 550, stamina: 450, power: 600, guts: 300, wisdom: 300 }
+        'front-runner': { speed: 750, stamina: 300, power: 350, guts: 300, wit: 300 },
+        'pace-chaser': { speed: 650, stamina: 350, power: 500, guts: 300, wit: 300 },
+        'late-surger': { speed: 550, stamina: 400, power: 600, guts: 300, wit: 300 },
+        'end-closer': { speed: 550, stamina: 450, power: 600, guts: 300, wit: 300 }
       },
       mile: {
-        'front-runner': { speed: 750, stamina: 400, power: 350, guts: 300, wisdom: 300 },
-        'pace-chaser': { speed: 650, stamina: 450, power: 500, guts: 300, wisdom: 300 },
-        'late-surger': { speed: 550, stamina: 500, power: 600, guts: 300, wisdom: 300 },
-        'end-closer': { speed: 550, stamina: 550, power: 600, guts: 300, wisdom: 300 }
+        'front-runner': { speed: 750, stamina: 400, power: 350, guts: 300, wit: 300 },
+        'pace-chaser': { speed: 650, stamina: 450, power: 500, guts: 300, wit: 300 },
+        'late-surger': { speed: 550, stamina: 500, power: 600, guts: 300, wit: 300 },
+        'end-closer': { speed: 550, stamina: 550, power: 600, guts: 300, wit: 300 }
       },
       medium: {
-        'front-runner': { speed: 750, stamina: 450, power: 350, guts: 300, wisdom: 300 },
-        'pace-chaser': { speed: 650, stamina: 500, power: 500, guts: 300, wisdom: 300 },
-        'late-surger': { speed: 550, stamina: 550, power: 600, guts: 300, wisdom: 300 },
-        'end-closer': { speed: 550, stamina: 600, power: 600, guts: 300, wisdom: 300 }
+        'front-runner': { speed: 750, stamina: 450, power: 350, guts: 300, wit: 300 },
+        'pace-chaser': { speed: 650, stamina: 500, power: 500, guts: 300, wit: 300 },
+        'late-surger': { speed: 550, stamina: 550, power: 600, guts: 300, wit: 300 },
+        'end-closer': { speed: 550, stamina: 600, power: 600, guts: 300, wit: 300 }
       },
       long: {
-        'front-runner': { speed: 750, stamina: 500, power: 350, guts: 300, wisdom: 300 },
-        'pace-chaser': { speed: 650, stamina: 550, power: 500, guts: 300, wisdom: 300 },
-        'late-surger': { speed: 550, stamina: 600, power: 600, guts: 300, wisdom: 300 },
-        'end-closer': { speed: 550, stamina: 650, power: 600, guts: 300, wisdom: 300 }
+        'front-runner': { speed: 750, stamina: 500, power: 350, guts: 300, wit: 300 },
+        'pace-chaser': { speed: 650, stamina: 550, power: 500, guts: 300, wit: 300 },
+        'late-surger': { speed: 550, stamina: 600, power: 600, guts: 300, wit: 300 },
+        'end-closer': { speed: 550, stamina: 650, power: 600, guts: 300, wit: 300 }
       }
     };
 
     // Stat efficiency thresholds and diminishing returns
     const STAT_EFFICIENCY = {
-      optimal: { speed: 1200, guts: 400, wisdom: 400 },
-      diminishingReturns: { speed: 1200, guts: 400, wisdom: 400 },
+      optimal: { speed: 1200, guts: 400, wit: 400 },
+      diminishingReturns: { speed: 1200, guts: 400, wit: 400 },
       warnings: {
         speedSoftCap: "Speed gains are halved after 1200. Consider focusing on other stats.",
         gutsOverInvest: "Guts above 400 gives minimal returns. Focus on core stats instead.",
-        wisdomOverInvest: "Wisdom above 400 gives minimal returns. Skill activation is already consistent.",
+        witOverInvest: "Wit above 400 gives minimal returns. Skill activation is already consistent.",
         staminaOverflow: "This stamina level may be excessive for this distance. Check if it's needed."
       }
     };

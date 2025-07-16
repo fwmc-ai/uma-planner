@@ -52,10 +52,10 @@
             advice.tips.push("Your guts bonus helps with final spurt endurance");
         }
 
-        // High wisdom growth
-        if (character.statGrowth.wisdom === 20 || character.statGrowth.wisdom === 15) {
-            advice.secondary.push("Wisdom training (you have good wisdom growth)");
-            advice.tips.push("Your wisdom bonus improves skill activation consistency");
+        // High wit growth
+        if (character.statGrowth.wit === 20 || character.statGrowth.wit === 15) {
+            advice.secondary.push("Wit training (you have good wit growth)");
+            advice.tips.push("Your wit bonus improves skill activation consistency");
         }
 
         // Aptitude-based recommendations
@@ -82,7 +82,7 @@
 
         // Specific character tips
         if (character.id === 'special_week') {
-            advice.tips.push("Versatile in medium/long distances, focus on stamina and wisdom for consistency");
+            advice.tips.push("Versatile in medium/long distances, focus on stamina and wit for consistency");
         } else if (character.id === 'silence_suzuka') {
             advice.tips.push("Front-runner specialist, prioritize speed and avoid long distances");
         } else if (character.id === 'rice_shower') {
