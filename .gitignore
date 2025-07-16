@@ -38,6 +38,7 @@ Thumbs.db
 
 # Local development files
 .claude/
+testing-notes.txt
 
 # Environment files
 .env

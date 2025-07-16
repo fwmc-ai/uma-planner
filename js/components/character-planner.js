@@ -376,9 +376,40 @@
         // Stats planning section with mobile-optimized layout
         const statsSection = createElement('div', 'space-y-6 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-8');
         
-        // Left side - Quick Import and Stat controls
+        // Left side - Target Selectors, Quick Import and Stat controls
         const leftPanel = createElement('div', 'space-y-6 order-1 lg:order-1');
         leftPanel.innerHTML = `
+            <!-- Target Selectors Section (Universal) -->
+            <div class="bg-white bg-opacity-90 rounded-lg p-4 shadow-sm border border-gray-200 space-y-4">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                    <span>🎯</span>
+                    Training Target
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-base font-semibold text-gray-800 mb-2">Target Style</label>
+                        <select id="style-select" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+                            ${STYLES.map(style => `
+                                <option value="${style}" ${appState.style === style ? 'selected' : ''}>
+                                    ${getStyleDisplayName(style)}
+                                </option>
+                            `).join('')}
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-base font-semibold text-gray-800 mb-2">Target Distance</label>
+                        <select id="distance-select" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+                            ${TRACK_TYPES.map(track => `
+                                <option value="${track}" ${appState.targetTrack === track ? 'selected' : ''}>
+                                    ${track.charAt(0).toUpperCase() + track.slice(1)}
+                                </option>
+                            `).join('')}
+                        </select>
+                    </div>
+                </div>
+            </div>
+
             <!-- Quick Import Section -->
             <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-3">
                 <h3 class="font-semibold text-blue-800 flex items-center gap-2">
@@ -478,33 +509,6 @@
         // Add the stat planning container to the left panel
         leftPanel.appendChild(statPlanningContainer);
 
-        // Mobile Target Selectors (shown right after Quick Import on mobile)
-        const mobileSelectorsPanel = createElement('div', 'lg:hidden order-2');
-        mobileSelectorsPanel.innerHTML = `
-            <div class="bg-white bg-opacity-90 rounded-lg p-4 shadow-sm border border-gray-200 space-y-4">
-                <div>
-                    <label class="block text-base font-semibold text-gray-800 mb-2">Target Style</label>
-                    <select id="mobile-style-select" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-transparent">
-                        ${STYLES.map(style => `
-                            <option value="${style}" ${appState.style === style ? 'selected' : ''}>
-                                ${getStyleDisplayName(style)}
-                            </option>
-                        `).join('')}
-                    </select>
-                </div>
-                
-                <div>
-                    <label class="block text-base font-semibold text-gray-800 mb-2">Target Distance</label>
-                    <select id="mobile-distance-select" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-transparent">
-                        ${TRACK_TYPES.map(track => `
-                            <option value="${track}" ${appState.targetTrack === track ? 'selected' : ''}>
-                                ${track.charAt(0).toUpperCase() + track.slice(1)}
-                            </option>
-                        `).join('')}
-                    </select>
-                </div>
-            </div>
-        `;
 
         // Mobile Training Recommendations (shown after Target Selectors on mobile)
         const mobileTrainingPanel = createElement('div', 'lg:hidden order-3');
@@ -532,31 +536,6 @@
             </div>
         `;
         
-        // Distance and style selectors (hidden on mobile, shown on desktop)
-        const selectors = createElement('div', 'hidden lg:block bg-white bg-opacity-90 rounded-lg p-4 shadow-sm border border-gray-200 space-y-4');
-        selectors.innerHTML = `
-            <div>
-                <label class="block text-base font-semibold text-gray-800 mb-2">Target Style</label>
-                <select id="style-select" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-transparent">
-                    ${STYLES.map(style => `
-                        <option value="${style}" ${appState.style === style ? 'selected' : ''}>
-                            ${getStyleDisplayName(style)}
-                        </option>
-                    `).join('')}
-                </select>
-            </div>
-            
-            <div>
-                <label class="block text-base font-semibold text-gray-800 mb-2">Target Distance</label>
-                <select id="distance-select" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-transparent">
-                    ${TRACK_TYPES.map(track => `
-                        <option value="${track}" ${appState.targetTrack === track ? 'selected' : ''}>
-                            ${track.charAt(0).toUpperCase() + track.slice(1)}
-                        </option>
-                    `).join('')}
-                </select>
-            </div>
-        `;
 
         // Training recommendations for both mobile and desktop
         if (trainingRecommendations.length > 0) {
@@ -607,7 +586,6 @@
             const desktopTrainingPanel = createElement('div', 'hidden lg:block bg-gray-50 rounded-lg p-4');
             desktopTrainingPanel.innerHTML = trainingHTML;
             
-            rightPanel.appendChild(selectors);
             rightPanel.appendChild(desktopTrainingPanel);
         }
 
@@ -758,7 +736,6 @@
         rightPanel.appendChild(skillPanel);
         
         statsSection.appendChild(leftPanel);
-        statsSection.appendChild(mobileSelectorsPanel);
         statsSection.appendChild(mobileTrainingPanel);
         statsSection.appendChild(rightPanel);
 
@@ -900,21 +877,6 @@
                 });
             }
 
-            // Mobile Style selector
-            const mobileStyleSelect = document.getElementById('mobile-style-select');
-            if (mobileStyleSelect) {
-                mobileStyleSelect.addEventListener('change', (e) => {
-                    updateAppState({ style: e.target.value });
-                });
-            }
-
-            // Mobile Distance selector
-            const mobileDistanceSelect = document.getElementById('mobile-distance-select');
-            if (mobileDistanceSelect) {
-                mobileDistanceSelect.addEventListener('change', (e) => {
-                    updateAppState({ targetTrack: e.target.value });
-                });
-            }
         }, 0);
 
         mainContainer.appendChild(backButton);

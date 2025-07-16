@@ -20,11 +20,11 @@
         const header = createElement('div', 'text-center mb-8');
         header.innerHTML = `
             <div class="flex justify-center items-center mb-4">
-                <!-- Logo container - smart fallback system -->
-                <div id="site-logo" class="transition-opacity duration-300">
+                <!-- Logo container - smart fallback system with click functionality -->
+                <div id="site-logo" class="transition-opacity duration-300 cursor-pointer" onclick="window.location.reload();">
                     <img id="logo-img" src="./logo.png" alt="Uma Musume Career Planner" 
-                         class="h-36 md:h-48 w-auto max-w-4xl mx-auto" style="display: block;">
-                    <div id="logo-fallback" class="text-center" style="display: none;">
+                         class="h-36 md:h-48 w-auto max-w-4xl mx-auto hover:opacity-80 transition-opacity" style="display: block;">
+                    <div id="logo-fallback" class="text-center hover:opacity-80 transition-opacity" style="display: none;">
                         <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-1">🏇 Uma Musume</h1>
                         <p class="text-base md:text-lg text-gray-600">Career Planner</p>
                     </div>
@@ -61,13 +61,22 @@
         
         const searchInput = searchContainer.querySelector('input');
         
-        // Debounce the search input to prevent excessive re-renders on mobile
+        // Enhanced mobile-friendly search input handling
         let searchTimeout;
         searchInput.addEventListener('input', (e) => {
             clearTimeout(searchTimeout);
+            
+            // Immediate update for responsiveness, but still debounce
             searchTimeout = setTimeout(() => {
                 updateAppState({ searchTerm: e.target.value });
-            }, 100); // Small delay to batch rapid typing
+            }, 50); // Reduced delay for better responsiveness
+        });
+        
+        // Prevent mobile keyboard issues
+        searchInput.addEventListener('focus', (e) => {
+            // Ensure input stays focused on mobile
+            e.target.style.webkitUserSelect = 'text';
+            e.target.style.userSelect = 'text';
         });
         
         // Additional mobile-specific event handling
@@ -102,16 +111,18 @@
             const section = createElement('div', 'space-y-4');
             
             // Rarity header with responsive mobile layout
-            const header = createElement('div', 'pb-2 border-b border-gray-200 space-y-3 sm:space-y-0 sm:flex sm:items-center sm:justify-between');
+            const header = createElement('div', 'pb-2 border-b border-gray-200 space-y-3 sm:space-y-0 flex flex-col items-center sm:flex-row sm:items-center sm:justify-between');
             const isFirstSection = rarity === 3; // Keep reference for unique IDs
             const showToggle = true; // Show toggle on all sections
             header.innerHTML = `
-                <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800">${getRarityStars(rarity)} Characters</h2>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm self-start">${characters.length} available</span>
+                <div class="flex flex-col items-center sm:flex-row sm:items-center gap-2 sm:gap-3">
+                    <div class="flex items-center gap-3">
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm sm:text-base font-bold">${getRarityStars(rarity)} Characters</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm sm:text-base">${characters.length} available</span>
+                    </div>
                 </div>
                 ${showToggle ? `
-                    <div class="flex items-center bg-gray-100 rounded-lg p-1 w-fit">
+                    <div class="flex items-center bg-gray-100 rounded-lg p-1 w-fit mx-auto sm:mx-0">
                         <button id="costume-school${isFirstSection ? '' : '-' + rarity}" class="px-2 sm:px-3 py-1 rounded-md text-xs sm:text-sm font-medium transition-colors ${appState.costumeMode === 'school' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-600 hover:text-gray-900'}">
                             🏫 School
                         </button>
@@ -158,15 +169,15 @@
                             <div class="text-4xl">${character.image}</div>
                             <div class="text-yellow-500 font-bold text-sm">${getRarityStars(character.rarity)}</div>
                         </div>
-                        <div class="flex items-center gap-2 mb-3">
-                            <h3 class="text-lg font-bold text-gray-800">${character.name}</h3>
-                            <div class="flex flex-wrap gap-1">
+                        <div class="mb-3">
+                            <h3 class="text-lg font-bold text-gray-800 mb-1 truncate">${character.name}</h3>
+                            <div class="flex flex-nowrap gap-1 overflow-x-auto">
                                 ${character.styles ? character.styles.map(style => `
-                                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-opacity-90 ${getStyleColor(style)}">
+                                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-opacity-90 whitespace-nowrap flex-shrink-0 ${getStyleColor(style)}">
                                         ${getStyleDisplayName(style)}
                                     </span>
                                 `).join('') : `
-                                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-opacity-90 ${getStyleColor(character.defaultStyle)}">
+                                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-opacity-90 whitespace-nowrap flex-shrink-0 ${getStyleColor(character.defaultStyle)}">
                                         ${getStyleDisplayName(character.defaultStyle)}
                                     </span>
                                 `}

@@ -26,31 +26,34 @@
             
             // Restore search input focus and cursor position after render
             if (wasSearchFocused) {
-                // Use requestAnimationFrame for better mobile compatibility
-                requestAnimationFrame(() => {
+                // Enhanced mobile focus preservation with multiple fallbacks
+                const restoreFocus = () => {
                     const newSearchInput = document.querySelector('#search-input');
-                    if (newSearchInput) {
-                        // Force focus with additional mobile-specific handling
+                    if (newSearchInput && newSearchInput !== document.activeElement) {
+                        // Force focus with mobile-specific handling
                         newSearchInput.focus();
                         
-                        // Mobile devices may need additional time for virtual keyboard
-                        setTimeout(() => {
-                            if (document.activeElement !== newSearchInput) {
-                                newSearchInput.focus();
+                        // Restore cursor position immediately
+                        if (cursorPosition !== null) {
+                            try {
+                                newSearchInput.setSelectionRange(cursorPosition, cursorPosition);
+                            } catch (e) {
+                                // Fallback for mobile browsers
+                                newSearchInput.selectionStart = cursorPosition;
+                                newSearchInput.selectionEnd = cursorPosition;
                             }
-                            
-                            // Restore cursor position
-                            if (cursorPosition !== null) {
-                                try {
-                                    newSearchInput.setSelectionRange(cursorPosition, cursorPosition);
-                                } catch (e) {
-                                    // Fallback for mobile browsers that may not support setSelectionRange
-                                    newSearchInput.selectionStart = cursorPosition;
-                                    newSearchInput.selectionEnd = cursorPosition;
-                                }
-                            }
-                        }, 50); // Longer timeout for mobile virtual keyboard
+                        }
                     }
+                };
+                
+                // Multiple attempts with different timing for mobile compatibility
+                requestAnimationFrame(() => {
+                    restoreFocus();
+                    
+                    // Additional fallbacks for stubborn mobile keyboards
+                    setTimeout(restoreFocus, 10);
+                    setTimeout(restoreFocus, 50);
+                    setTimeout(restoreFocus, 100);
                 });
             }
         } else if (appState.currentView === 'planner') {
@@ -77,6 +80,55 @@
     }
 
     /**
+     * Initialize scroll-to-top button functionality
+     * Creates and manages the floating scroll button
+     */
+    function initializeScrollToTop() {
+        // Create scroll-to-top button
+        const scrollButton = document.createElement('button');
+        scrollButton.className = 'scroll-to-top';
+        scrollButton.innerHTML = '↑';
+        scrollButton.setAttribute('aria-label', 'Scroll to top');
+        
+        // Add click handler
+        scrollButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Add to page
+        document.body.appendChild(scrollButton);
+        
+        // Show/hide based on scroll position
+        let isVisible = false;
+        const toggleVisibility = () => {
+            const shouldShow = window.scrollY > 300;
+            
+            if (shouldShow && !isVisible) {
+                scrollButton.classList.add('visible');
+                isVisible = true;
+            } else if (!shouldShow && isVisible) {
+                scrollButton.classList.remove('visible');
+                isVisible = false;
+            }
+        };
+        
+        // Throttle scroll events for performance
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            scrollTimeout = setTimeout(toggleVisibility, 10);
+        });
+        
+        // Initial check
+        toggleVisibility();
+    }
+
+    /**
      * Initialize the entire application
      * Sets up event system, PWA functionality, and renders initial view
      */
@@ -92,6 +144,9 @@
             
             // Initialize PWA functionality
             initializePWA();
+            
+            // Initialize scroll-to-top button
+            initializeScrollToTop();
             
             // Render initial view
             renderApp();
