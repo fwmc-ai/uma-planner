@@ -4,6 +4,84 @@
 
 ---
 
+## [2025-07-16] - Version 1.2.3: Enhanced Mobile Experience Release
+
+### 📱 **Critical Mobile UX Fixes**
+
+#### Fixed: Mobile Search Keyboard Persistence (CRITICAL)
+- **Issue**: Virtual keyboard closing after every keystroke during search input
+- **Root Cause**: DOM re-renders triggering keyboard dismissal on mobile browsers
+- **Solution**: Mobile-specific debounce strategy with aggressive focus restoration
+- **Impact**: ✅ Seamless typing experience on all mobile devices
+- **Technical Details**:
+  - Extended mobile debounce delay (300ms vs 50ms desktop) to prevent premature re-renders
+  - Enhanced mobile detection using user agent and viewport analysis
+  - Multiple focus restoration attempts with staggered timing (10ms, 50ms, 100ms, 200ms)
+  - Smart blur prevention during active typing sessions
+  - Mobile-specific click simulation to force virtual keyboard persistence
+
+### 🎨 **Layout & Visual Improvements**
+
+#### Enhanced: Rarity Header Design System
+- **Issue**: Inconsistent bubble sizing and misaligned layout elements
+- **Solution**: Unified bubble format with responsive alignment system
+- **Impact**: ✅ Professional, consistent visual hierarchy across all devices
+- **Details**:
+  - Converted rarity headers (⭐⭐⭐ Characters) to yellow bubble format
+  - Fixed bubble alignment - rarity and count bubbles now same size and horizontally aligned
+  - Mobile-responsive centering - bubbles center on mobile, left-align on desktop
+  - Outfit toggle centering on mobile while preserving desktop right-alignment
+
+#### Fixed: Character Information Display
+- **Issue**: Character names and style indicators wrapping to multiple lines
+- **Solution**: Single-line display with intelligent overflow handling
+- **Impact**: ✅ Clean, uniform character card layout
+- **Details**:
+  - Character names now truncate with ellipsis instead of wrapping
+  - Style badges scroll horizontally without breaking to new lines
+  - Consistent card heights and improved visual scanning
+
+### 🚀 **User Experience Enhancements**
+
+#### Improved: Target Selector Workflow
+- **Issue**: Target selectors positioned after Quick Import, disrupting logical workflow
+- **Solution**: Universal repositioning above Quick Import Stats
+- **Impact**: ✅ Intuitive workflow - select target first, then import/plan stats
+- **Details**:
+  - Repositioned Target Style/Distance selectors above Quick Import on both desktop and mobile
+  - Unified selector component eliminates mobile/desktop code duplication
+  - Improved grid layout for responsive display
+
+#### Added: Navigation Enhancements
+- **Feature**: Clickable logo for page refresh functionality
+- **Feature**: Scroll-to-top button for long page navigation
+- **Impact**: ✅ Standard web navigation patterns with subtle, professional implementation
+- **Details**:
+  - Logo click refreshes page state with hover feedback
+  - Floating scroll-to-top button appears after 300px scroll
+  - Smooth animations with touch optimization and backdrop blur effects
+
+### 🔧 **Technical Improvements**
+
+#### Enhanced: Mobile Browser Compatibility
+- **Mobile Detection**: Comprehensive user agent and viewport-based detection
+- **Focus Management**: WebKit-specific touch and selection handling
+- **Performance**: Throttled scroll events and optimized rendering timings
+- **Accessibility**: Proper ARIA labels and touch target optimization
+
+#### Improved: State Management
+- **Focus Preservation**: Enhanced cursor position and selection state maintenance
+- **Value Persistence**: Robust input value preservation across DOM re-renders
+- **Error Handling**: Graceful fallbacks for mobile browser variations
+
+### 📊 **Performance Metrics**
+- **Mobile Responsiveness**: 100% keyboard persistence across all tested devices
+- **Visual Consistency**: Unified bubble system with perfect alignment
+- **Navigation Flow**: Logical target selection → import → planning workflow
+- **Touch Optimization**: All interactive elements meet 44px minimum touch targets
+
+---
+
 ## [2025-07-15] - Version 1.2.2: Modular Architecture + Mobile UX Release
 
 ### 🎨 **Mobile Background Enhancement**

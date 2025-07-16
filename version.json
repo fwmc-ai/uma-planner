@@ -1,8 +1,8 @@
 {
-  "version": "1.2.2",
-  "release_date": "2025-07-15", 
-  "release_name": "Modular Architecture + Mobile UX Release",
-  "build_number": 5,
+  "version": "1.2.3",
+  "release_date": "2025-07-16", 
+  "release_name": "Enhanced Mobile Experience Release",
+  "build_number": 6,
   "features": [
     "Complete character database (32 characters with accurate rarities)",
     "Intelligent training recommendations",
@@ -11,10 +11,10 @@
     "Progressive Web App with offline support",
     "Modular JavaScript architecture for maintainability"
   ],
-  "cache_version": "uma-planner-v1.2.2",
-  "data_version": "2025-07-15",
+  "cache_version": "uma-planner-v1.2.3",
+  "data_version": "2025-07-16",
   "minimum_cache_clear": false,
-  "update_notes": "🏗️ Major architecture update! Completely modularized codebase with 93% reduction in main file size while maintaining 100% functionality. 🎨 Mobile background enhancement: Custom mobile-background.png eliminates stretching/blurring. 🐛 Console cleanup: All errors and warnings resolved - production-ready with clean console output.",
+  "update_notes": "📱 Enhanced Mobile Experience! Fixed critical mobile search keyboard persistence, improved layout alignment with bubble formatting, repositioned target selectors for better workflow, added scroll-to-top navigation, and implemented clickable logo functionality. Perfect mobile UX with responsive design.",
   "compatibility": {
     "browsers": ["Chrome 80+", "Firefox 75+", "Safari 13+", "Edge 80+"],
     "mobile": true,
