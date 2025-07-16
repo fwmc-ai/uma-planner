@@ -8,6 +8,7 @@ LICENSE
 
 # Backup files and unused modules
 backups/
+suggestion-box.png
 
 # Research files
 research/
@@ -41,6 +42,7 @@ Thumbs.db
 testing-notes.txt
 UMA_MUSUME_DATA_REFERENCE.md
 UMA_MUSUME_DATA_REFERENCE_RESPONSE.txt
+PHASE_4A_DATA_VALIDATION_REQUIREMENTS.md
 
 # Environment files
 .env
