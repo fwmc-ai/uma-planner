@@ -1,16 +1,17 @@
 // Uma Musume Career Planner - Service Worker
-// Version 1.1.0 - Mobile Experience Optimization
+// Version 1.9.0 - Research-Based Training Algorithm & Mobile Optimization
 
-const CACHE_NAME = 'uma-planner-v1.3.0-production';
-const STATIC_CACHE_NAME = 'uma-static-v1.3.0-production';
+const CACHE_NAME = 'uma-planner-v1.9.0-production';
+const STATIC_CACHE_NAME = 'uma-static-v1.9.0-production';
 
-// Files to cache for offline functionality
+// Files to cache for offline functionality  
+const CACHE_BUST = '?v=1.9.0-' + Date.now();
 const STATIC_ASSETS = [
   './',
-  './index.html',
-  './manifest.json',
-  './version.json',
-  './css/styles.css',
+  './index.html' + CACHE_BUST,
+  './manifest.json' + CACHE_BUST,
+  './version.json' + CACHE_BUST,
+  './css/styles.css' + CACHE_BUST,
   './assets/images/logo.png',
   './assets/images/backgrounds/nakayama_background.png',
   './assets/images/backgrounds/mobile-background.png',
