@@ -1,418 +1,274 @@
-# 🏇 Uma Musume Pretty Derby Career Planner
+# Uma Musume Pretty Derby Web App
 
-> **A comprehensive training optimization tool for Uma Musume Pretty Derby Global**
+A comprehensive Progressive Web Application for Uma Musume Pretty Derby character planning and training optimization.
 
-[![Version](https://img.shields.io/badge/version-1.2.4-blue.svg)](https://github.com/fwmc-ai/uma-planner/releases)
-[![PWA](https://img.shields.io/badge/PWA-enabled-green.svg)](https://web.dev/progressive-web-apps/)
-[![Mobile](https://img.shields.io/badge/mobile-optimized-brightgreen.svg)](https://fwmc-ai.github.io/uma-planner/)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+## 🚀 v1.8.2 - Comprehensive Skills System & Enhanced Recommendations!
 
-**Live Application**: [https://fwmc-ai.github.io/uma-planner/](https://fwmc-ai.github.io/uma-planner/)
+**MAJOR UPDATE: Revolutionary Skills Database & Strategy-Specific Recommendations:**
+- 🎯 **Comprehensive Skills Database** - 50+ documented skills with detailed effects, activation conditions, and competitive tier rankings (S/A/B/C)
+- ⚡ **Strategy-Specific Recommendations** - Dynamic skill recommendations that change based on running style (Front Runner, Pace Chaser, Late Surger, End Closer)
+- 📊 **Distance-Based Priorities** - Smart skill suggestions that adapt to target distance (Sprint/Mile/Medium/Long) with strategic analysis
+- 🔧 **Real-Time Updates** - Skills recommendations update instantly when changing Training Settings (distance/style selectors)
+- 📚 **Research-Based Data** - Built from comprehensive analysis of Global Reference Documents with quantified skill effects
+- 🎲 **29 Character Unique Skills** - Complete database of character-specific ultimate skills with strategic assessments
+- 🧠 **Intelligent Categorization** - Essential/Recommended/Conditional skill organization with detailed reasoning and effect descriptions
+- 🔄 **Enhanced Integration** - Seamless connection between Training Settings and Skills tab for cohesive character planning
 
-## 📖 Table of Contents
+## 🚀 v1.8.1 - Cross-Tab Functionality & Training Algorithm Overhaul!
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Quick Start Guide](#-quick-start-guide)
-- [How to Use](#-how-to-use)
-- [Character Database](#-character-database)
-- [Training System](#-training-system)
-- [Technical Architecture](#-technical-architecture)
-- [Development](#-development)
-- [Contributing](#-contributing)
-- [Changelog](#-changelog)
+**MAJOR UPDATE: Universal Stat Management & Accurate Training Recommendations:**
+- 🔧 **CRITICAL FIX: Universal Stat Updates** - Quick Import and double-click editing now work instantly across all tabs
+- 🔧 **CRITICAL FIX: Training Recommendations** - Fixed major algorithm bug where training showed 0 value when stats were above threshold
+- ⚡ **Cross-Tab Compatibility** - Performance Status boxes and stat editing work seamlessly on Character Info, Support Cards, Skills, and Guide tabs
+- 🧠 **Smart Algorithm** - Training recommendations now properly value stat gains even when above target (Speed training with SSR Speed deck shows correct high value)
+- 🎯 **Enhanced Value System** - New priority weighting: deficit filling (2.0x) > surplus gains (0.8x) > secondary stats
+- 🔄 **Intelligent Updates** - Smart state management with automatic fallback to manual refresh when needed
 
-## 🎯 Overview
+## 🎉 v1.8.0 - Support Card Level Selection System Complete!
 
-The Uma Musume Pretty Derby Career Planner is a **Progressive Web Application (PWA)** designed to help players optimize their character training and career planning strategies. Built with vanilla JavaScript and featuring a modular architecture, it provides comprehensive training recommendations based on real game mechanics.
+**MILESTONE: 100% Complete Support Card Database with Full Level Selection:**
+- 🎯 **100% Implementation Complete** - 117/117 support cards with complete level progression data
+- ✅ **All SSR Cards Complete** - 30/30 SSR cards with 11-level progression (100% complete)
+- ✅ **All SR Cards Complete** - 26/26 SR cards with 10-level progression (100% complete)  
+- ✅ **All R Cards Complete** - 61/61 R cards with 9-level progression (100% complete)
+- 🔧 **Fixed Level Selection** - All cards now show complete clickable level grids
+- 📊 **Revolutionary Tier Systems** - Complete 6-tier SSR and 5-tier SR classification systems
+- 🗂️ **Modular Database** - level-progression-r.js, level-progression-sr.js, level-progression-ssr.js modules
+- 🎛️ **Enhanced UX** - Fixed scroll position preservation in support card selection
 
-### Why Use This Tool?
+## 🏗️ Project Structure
 
-- **🎯 Optimize Training**: Get personalized recommendations based on character strengths and target goals
-- **📊 Real-Time Analysis**: See exactly how your stats compare to optimal thresholds
-- **📱 Mobile-First**: Perfect experience on phones, tablets, and desktop
-- **🔄 Offline Ready**: Works without internet connection once loaded
-- **🚀 Lightning Fast**: 93% reduced codebase with modular architecture
+This project follows an organized modular structure for easy maintenance and development:
 
-## ✨ Features
+### 📁 Directory Organization
 
-### 🏆 **Core Features**
-- **Complete Character Database**: All 31 Global release characters with accurate data
-- **Intelligent Training Recommendations**: Real Uma Musume mechanics-based advice
-- **Interactive Stat Planning**: Visual controls with real-time threshold analysis
-- **Multiple Running Style Support**: Characters display all viable running styles
-- **Target-Based Optimization**: Distance and style-specific stat requirements
-
-### 📱 **Mobile Experience**
-- **Perfect Keyboard Persistence**: Search typing works flawlessly on mobile
-- **Responsive Layout**: Optimized for all screen sizes
-- **Touch-Friendly Controls**: Proper touch targets and smooth interactions
-- **Custom Mobile Background**: Eliminates stretching on vertical screens
-
-### 🎨 **User Interface**
-- **Professional Design**: Clean, modern interface with intuitive navigation
-- **Visual Character Portraits**: School and secondary costume support
-- **Smart Search**: Real-time character filtering with highlighted results
-- **Scroll-to-Top Navigation**: Smooth page navigation for long content
-
-### ⚡ **Performance & Technical**
-- **Progressive Web App**: Install to home screen, works offline
-- **Modular Architecture**: 93% size reduction (2064 → 151 lines main file)
-- **Zero Dependencies**: Pure vanilla JavaScript, no frameworks
-- **Clean Console**: Production-ready with zero errors or warnings
-
-## 🚀 Quick Start Guide
-
-### **1. Access the Application**
-Visit: **[https://fwmc-ai.github.io/uma-planner/](https://fwmc-ai.github.io/uma-planner/)**
-
-### **2. Install as PWA (Optional)**
-- **Mobile**: Tap "Add to Home Screen" in your browser menu
-- **Desktop**: Click the install icon in your address bar
-- **Benefits**: Faster loading, offline access, app-like experience
-
-### **3. Start Planning**
-1. **Browse Characters** on the home page
-2. **Search** by name or filter by rarity
-3. **Select a Character** to open the training planner
-4. **Set Your Goals** using the target selectors
-5. **Plan Your Stats** with the interactive controls
-
-## 📱 How to Use
-
-### **Home Page - Character Selection**
-
-#### **Character Browser**
-- **⭐⭐⭐ Characters**: 3-star premium characters with highest potential
-- **⭐⭐ Characters**: 2-star characters with solid capabilities  
-- **⭐ Characters**: 1-star characters perfect for beginners
-
-#### **Search & Filter**
-- **🔍 Search Box**: Type character names for instant filtering
-- **🏫 School / ✨ Secondary**: Toggle between costume portraits
-- **💡 Tip**: Search works in real-time - no need to press enter!
-
-#### **Character Cards**
-Each character card displays:
-- **Character Portrait**: Visual representation with costume toggle
-- **Running Styles**: All viable racing styles (Front, Pace, Late, End)
-- **Surface Aptitudes**: Turf/Dirt performance grades (S/A/B/C/D/E/G)
-- **Distance Aptitudes**: Sprint/Mile/Medium/Long performance grades
-- **Fan Goal Thresholds**: Target fan counts for each career milestone
-
-### **Character Planner - Training Optimization**
-
-#### **Training Target Selection**
-**Set your goals first** - this determines all recommendations:
-- **Target Style**: Choose your preferred running style
-  - **Front Runner**: Lead from the start
-  - **Pace Setter**: Control the early pace
-  - **Late Charger**: Sprint in the final stretch
-  - **End Spurt**: Explosive final kick
-- **Target Distance**: Select your focus distance
-  - **Sprint**: 1000-1400m races
-  - **Mile**: 1400-1800m races  
-  - **Medium**: 1800-2500m races
-  - **Long**: 2500m+ races
-
-#### **Quick Import Stats**
-**Fastest way to input your current stats:**
-1. **Enter 5 numbers** in order: `Speed, Stamina, Power, Guts, Wit`
-2. **Any format works**: `450 550 400 350 300` or `450, 550, 400, 350, 300`
-3. **Press Enter** for instant import
-4. **Reset to Base** button restores character's starting stats
-
-#### **Interactive Stat Planning**
-**Fine-tune your stats with precision:**
-- **Slider Controls**: Drag for quick adjustments
-- **+/- Buttons**: Precise incremental changes
-- **Color-Coded Feedback**:
-  - 🟢 **Green**: Above optimal threshold
-  - 🟡 **Yellow**: Close to threshold (80%+)
-  - 🔴 **Red**: Below recommended level
-  - 🟠 **Orange**: Diminishing returns warning
-
-#### **Training Recommendations**
-**Smart recommendations based on your current stats:**
-- **🥇 Priority Training**: Most important areas to focus
-- **📈 Efficiency Analysis**: Best stat gains per training session
-- **⚠️ Warnings**: Alerts for over-investment in stats
-- **🎯 Target Guidance**: How close you are to optimal builds
-
-#### **Performance Analysis**
-**Real-time stat evaluation:**
-- **Threshold Comparison**: Your stats vs. optimal requirements
-- **Efficiency Warnings**: Diminishing returns notifications
-- **Fan Goal Progress**: Track your career milestone progress
-
-### **Character-Specific Advice**
-**Personalized recommendations for each character:**
-- **Natural Strengths**: What this character excels at
-- **Training Priorities**: Which stats to focus on first
-- **Style Recommendations**: Best running styles for this character
-- **Distance Optimization**: Ideal race distances
-
-### **Skill Recommendations**
-**Strategic skill selection guidance:**
-- **Essential Skills**: Must-have skills for your build
-- **Situational Skills**: Useful in specific scenarios
-- **Style-Specific**: Skills that complement your running style
-- **Distance-Specific**: Skills optimized for your target distance
-
-## 🗃️ Character Database
-
-### **Complete Global Release Roster (28 Characters)**
-
-#### **⭐⭐⭐ Premium Characters (12)**
-High-potential characters with exceptional abilities:
-- Special Week, Silence Suzuka, Tokai Teio, Maruzensky, Oguri Cap
-- Taiki Shuttle, Mejiro McQueen, TM Opera O, Symboli Rudolf, Rice Shower
-- Mihono Bourbon, Biwa Hayahide
-
-#### **⭐⭐ Solid Characters (8)**  
-Reliable characters with strong capabilities:
-- Super Creek, Mayano Top Gun, Air Groove, El Condor Pasa
-- Grass Wonder, Daiwa Scarlet, Vodka, Gold Ship
-
-#### **⭐ Starter Characters (8)**
-Perfect for beginners and budget builds:
-- Mejiro Ryan, Agnes Tachyon, Winning Ticket, Sakura Bakushin O
-- Haru Urara, Matikanefukukitaru, Nice Nature, King Halo
-
-### **Data Accuracy**
-- ✅ **100% Accurate**: All data matches Global release exactly
-- ✅ **Real Stats**: Actual base stats, aptitudes, and fan goals
-- ✅ **Current Meta**: Up-to-date with latest game versions
-- ✅ **Verified Skills**: Confirmed skill recommendations from gameplay data
-
-## 🎓 Training System
-
-### **Stat Thresholds**
-Each distance/style combination has optimal stat requirements:
-
-#### **Sprint Races (1000-1400m)**
-- **Speed**: 1000+ (critical for early acceleration)
-- **Power**: 800+ (burst performance)
-- **Stamina**: 400+ (sufficient for short distance)
-
-#### **Mile Races (1400-1800m)**  
-- **Speed**: 900+ (acceleration and top speed)
-- **Stamina**: 500+ (endurance for longer distance)
-- **Power**: 700+ (consistent performance)
-
-#### **Medium Races (1800-2500m)**
-- **Stamina**: 600+ (endurance critical)
-- **Speed**: 800+ (still important for positioning)
-- **Power**: 600+ (sustained performance)
-
-#### **Long Races (2500m+)**
-- **Stamina**: 700+ (maximum endurance needed)
-- **Guts**: 400+ (mental fortitude for long races)
-- **Power**: 500+ (consistent pace maintenance)
-
-### **Training Efficiency**
-**Diminishing Returns Thresholds:**
-- **Speed**: Efficiency drops after 1200
-- **Guts**: Over-investment after 400  
-- **Wit**: Limited benefit after 400
-- **Stamina**: Varies by distance, excess wastes training
-
-### **Smart Training Advisor**
-The planner calculates optimal training paths based on:
-- **Character's Natural Growth**: Some characters gain stats faster
-- **Current Stat Levels**: Prioritizes biggest gaps first
-- **Target Requirements**: Focuses on your chosen distance/style
-- **Efficiency Curves**: Avoids over-investment in capped stats
-
-## 🏗️ Technical Architecture
-
-### **Modern Web Technologies**
-- **Vanilla JavaScript**: No frameworks, pure ES6+ with modules
-- **Tailwind CSS**: Utility-first styling for rapid development
-- **Progressive Web App**: Service worker, manifest, offline support
-- **Responsive Design**: Mobile-first with desktop enhancements
-
-### **Modular Architecture**
-**10 Organized JavaScript Modules:**
 ```
-js/
-├── module-loader.js          # Custom module loading system
-├── constants.js              # Character database and configuration  
-├── utils.js                  # Core utility functions
-├── data-helpers.js           # Data processing and filtering
-├── skills.js                 # Skill recommendation system
-├── character-advice.js       # Character training advice
-├── state.js                  # Application state management
-├── events.js                 # Event handling and delegation
-├── app.js                    # Application controller
-└── components/
-    ├── home-page.js          # Home page UI component
-    └── character-planner.js  # Character planner UI component
+uma-musume-planner/
+├── 📱 src/                          # Core Application
+│   ├── index.html                   # Main application file
+│   ├── manifest.json                # PWA manifest
+│   ├── sw.js                        # Service worker
+│   ├── package.json                 # Package configuration
+│   ├── version.json                 # Version metadata
+│   ├── js/                          # JavaScript modules
+│   │   ├── app.js                   # Main application controller
+│   │   ├── constants.js             # Character database & constants
+│   │   ├── support-cards.js         # Support card database
+│   │   ├── skills.js                # Comprehensive skills database & recommendations
+│   │   ├── components/              # UI components
+│   │   │   ├── home-page.js         # Home page component
+│   │   │   ├── character-planner.js # Original character planner
+│   │   │   └── character-planner-redesigned.js # Redesigned tabbed interface
+│   │   └── [other modules]          # Additional modular architecture
+│   └── css/                         # Stylesheets
+│       └── styles.css               # Custom CSS styles
+│
+├── 🎨 assets/                       # Static Assets
+│   ├── images/                      # App assets
+│   │   ├── icons/                   # App icons (192px, 512px)
+│   │   ├── backgrounds/             # Background images
+│   │   └── logo.png                 # App logo
+│   └── umaicons/                    # Character portraits
+│       ├── school/                  # School uniform portraits
+│       └── secondary/               # Secondary portraits
+│
+├── 📚 docs/                         # Documentation
+│   ├── project/                     # Main project docs
+│   │   ├── README.md                # Project overview (you are here)
+│   │   ├── CHANGELOG.md             # Version history
+│   │   ├── PROJECT_STATUS.md        # Current development status
+│   │   └── LICENSE                  # License information
+│   ├── development/                 # Development documentation
+│   │   ├── CLAUDE.md                # AI development guidance
+│   │   ├── PHASE_4A_DATA_VALIDATION_REQUIREMENTS.md
+│   │   └── testing-notes.txt        # Development notes
+│   └── data-reference/              # Data reference docs
+│       ├── UMA_MUSUME_DATA_REFERENCE.md
+│       └── SUPPORT_CARD_IMPLEMENTATION_TRACKER.md
+│
+├── 🔬 research/                     # Research & Meta Analysis
+│   ├── support-cards/               # Support card documentation
+│   │   ├── support-cards-r.md       # R rarity cards
+│   │   ├── support-cards-sr.md      # SR rarity cards
+│   │   └── support-cards-ssr.md     # SSR rarity cards
+│   ├── skills-research-notes.md     # Comprehensive skills research & extraction notes
+│   └── extracted/                   # Research documents
+│       ├── Uma Musume Skill System (Global Version) Overview.md
+│       ├── Unique Skills of Global Uma Musume Characters.md
+│       └── [various research files] # Game mechanics & strategy docs
+│
+├── 🛠️ tools/                        # Development Tools
+│   └── templates/                   # Update templates
+│       ├── NEW_CHARACTER_TEMPLATE.md     # Character addition template
+│       ├── NEW_SUPPORT_CARD_TEMPLATE.md  # Support card template
+│       ├── META_RESEARCH_TEMPLATE.md     # Meta analysis template
+│       └── UPDATE_WORKFLOW.md            # Complete update guide
+│
+└── 💾 backups/                      # Version Backups
+    ├── v1.1.0-stable-baseline/     # Original baseline
+    ├── v1.2.4-pre-global-cleanup/  # Pre-cleanup state
+    └── v1.2.4-stable-baseline/     # Current stable baseline
 ```
 
-### **Performance Optimizations**
-- **93% Size Reduction**: Main file reduced from 2064 to 151 lines
-- **Module Loading**: Promise-based dependency management
-- **Event Delegation**: Performance-optimized event handling
-- **Service Worker**: Intelligent caching for offline use
-- **Mobile Optimization**: Enhanced touch and keyboard handling
+## 🚀 Quick Start
 
-### **Browser Compatibility**
-- **Chrome 80+**: Full feature support
-- **Firefox 75+**: Full feature support  
-- **Safari 13+**: Full feature support
-- **Edge 80+**: Full feature support
-- **Mobile Browsers**: Optimized for iOS Safari and Android Chrome
+### Running the Application
 
-## 🛠️ Development
+1. **Navigate to the src directory:**
+   ```bash
+   cd src/
+   ```
 
-### **Local Development Setup**
+2. **Start a local server:**
+   ```bash
+   npm start
+   # or
+   python -m http.server 3000
+   # or
+   npx http-server . -p 3000
+   ```
 
-#### **Prerequisites**
-- Modern web browser
-- Local web server (recommended: Live Server VS Code extension)
+3. **Open in browser:**
+   - Visit `http://localhost:3000`
+   - For PWA testing, ensure you're using HTTP server (not file://)
 
-#### **Getting Started**
-```bash
-# Clone the repository
-git clone https://github.com/fwmc-ai/uma-planner.git
+### Development Workflow
 
-# Navigate to project directory
-cd uma-planner
+1. **Making Changes:**
+   - Application code: Edit files in `src/`
+   - Documentation: Update files in `docs/`
+   - Assets: Add/modify files in `assets/`
 
-# Open with Live Server or your preferred local server
-# Visit: http://localhost:5500 (or your server's URL)
-```
+2. **Adding New Content:**
+   - Use templates in `tools/templates/`
+   - Follow `tools/templates/UPDATE_WORKFLOW.md`
 
-#### **Project Structure**
-```
-uma-planner/
-├── index.html                # Main application entry point
-├── manifest.json            # PWA manifest
-├── sw.js                    # Service worker
-├── css/
-│   └── styles.css           # Custom styles and mobile optimizations
-├── js/                      # Modular JavaScript architecture
-├── umaicons/               # Character portrait images
-│   ├── school/             # School uniform portraits
-│   └── secondary/          # Secondary costume portraits
-├── backups/                # Version backups and documentation
-└── docs/                   # Additional documentation
-```
+3. **Testing:**
+   - Test locally with HTTP server
+   - Verify PWA functionality
+   - Check responsive design on mobile
 
-### **Development Guidelines**
+## 📱 Application Features
 
-#### **Code Style**
-- **ES6+ JavaScript**: Modern syntax with module imports
-- **Strict Mode**: All modules use 'use strict'
-- **IIFE Pattern**: Modules wrapped in immediately invoked function expressions
-- **No Dependencies**: Pure vanilla JavaScript, no external libraries
+### Current Features (v1.6.0)
+- **30 Characters** - Complete character database including anime collaboration variants
+- **Revolutionary 6-Tier Support Card System** - Complete SSR/SR/R card classification with level progression
+- **Complete SSR Database** - All 29 SSR cards with Legendary tier discovery (35% friendship bonus)
+- **Advanced Level Progression Analysis** - Complete level 1-50 progression data for all rarity tiers
+- **105+ Support Cards** - Comprehensive support card database with revolutionary tier classifications
+- **6-Slot Deck Builder** - Advanced support card selection with search, filtering, and recommendations
+- **Intelligent Training System** - Enhanced stat planning with mood integration and card synergies
+- **Revolutionary Skills System** - 50+ skills database with strategy-specific recommendations and real-time distance/style integration
+- **Comprehensive Skills Database** - S/A/B/C tier rankings, quantified effects, and 29 character unique skills
+- **Character-Specific Guides** - Detailed training strategies with support card recommendations
+- **Mobile-First Design** - Optimized for mobile devices with enhanced touch interactions
+- **PWA Support** - Offline functionality and app installation
+- **Performance-Optimized Architecture** - Clean, maintainable modular code with advanced state management
 
-#### **Architecture Principles**
-- **Modular Design**: Each feature in its own module
-- **State Management**: Centralized state with `updateAppState()`
-- **Event Delegation**: Global event handling for performance
-- **Component Pattern**: Reusable UI components
+### Character Database
+- Complete Global release character data
+- Accurate aptitudes, stats, and growth bonuses
+- Training recommendations by character type
+- Distance and running style optimization
 
-#### **Mobile-First Development**
-- **Touch Targets**: Minimum 44px for accessibility
-- **Responsive Breakpoints**: Mobile-first with desktop enhancements
-- **Performance**: Optimized for mobile devices and slower connections
+### Character Planner Interface (v1.4.0 Redesign)
+The character planner has been completely redesigned with a modern tabbed interface:
 
-### **Build Process**
-This project uses **no build tools** by design:
-- **Direct Deployment**: Files can be served directly
-- **No Compilation**: Pure HTML/CSS/JS
-- **CDN Dependencies**: Tailwind CSS loaded via CDN
-- **Service Worker**: Handles caching and offline functionality
+#### **Tabbed Organization**
+- **Character Info Tab**: Character portrait, stats, aptitudes, and basic information
+- **Support Cards Tab**: Complete 6-slot deck builder with search and filtering
+- **Skills Tab**: Revolutionary skills system with strategy-specific recommendations that adapt to running style and distance
+- **Guide Tab**: Character-specific training strategies and tips
 
-## 🤝 Contributing
+#### **Enhanced User Experience**
+- **Smooth Transitions**: Animated tab switching with preserved state
+- **Focus Preservation**: Search inputs maintain focus while typing
+- **Performance Optimized**: Local state management prevents unwanted re-renders
+- **Mobile Responsive**: Touch-optimized interface with proper scaling
 
-We welcome contributions! Please see our contributing guidelines:
+#### **Training Tools Section**
+Below the tabs, organized into clean columns:
+- **Left Column**: Quick Import tools and Stat Planning with enhanced controls
+- **Right Column**: Character Mood selector and Training Recommendations
 
-### **How to Contribute**
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
+### Support Card System - Revolutionary 6-Tier Classification
+- **Complete Database**: 105+ support cards across all rarities with level progression data
+- **6-Tier SSR System**: Legendary (35%) > Ultra (30%) > Premium (25%) > Elite > Support > Standard (20%)
+- **Revolutionary Discovery**: Legendary SSR tier with 35% friendship bonus (20.7% of SSR cards)
+- **Complete Level Progression**: All SSR cards (29/29) with levels 1-50 progression data
+- **Interactive Deck Builder**: 6-slot card selection interface matching game layout
+- **Advanced Search & Filtering**: Real-time filtering by name, character, rarity, type, and tier
+- **Visual Card Display**: Color-coded cards with tier classifications and rarity badges
+- **Intelligent Recommendations**: Character-specific card suggestions based on tier analysis
+- **Comprehensive Effects**: Complete support effects, stat gains, and friendship scaling documentation
 
-### **Development Standards**
-- **Code Quality**: Follow existing patterns and conventions
-- **Testing**: Manually test all changes across devices
-- **Documentation**: Update README and CHANGELOG for significant changes
-- **Mobile Testing**: Verify mobile functionality on real devices
+## 🔧 Technical Details
 
-### **Areas for Contribution**
-- **Character Data**: Updates for new Global release characters
-- **Skill Database**: Expanded skill recommendations
-- **UI/UX**: Design improvements and accessibility enhancements
-- **Performance**: Further optimizations and caching improvements
-- **Features**: New training tools and analysis features
+### Technology Stack
+- **Frontend:** Vanilla JavaScript (ES6+) with modular architecture
+- **UI Framework:** Custom tabbed interface with smooth animations
+- **Styling:** Tailwind CSS + Custom CSS
+- **Architecture:** 12-module component-based structure with advanced state management
+- **PWA:** Service Worker + Web App Manifest
+- **Build:** No build process - deployable as static files
 
-## 📋 Changelog
+### Browser Support
+- Modern browsers with ES6+ support
+- Progressive Web App compatible browsers
+- Mobile browsers (iOS Safari, Chrome Mobile)
+- Offline functionality via Service Worker
 
-### **Version 1.2.4 - Terminology & Data Accuracy Patch (2025-07-16)**
-- **🔧 Fixed**: Corrected "Wisdom" stat to proper "Wit" terminology throughout codebase
-- **📊 Enhanced**: Updated character count from 32 to accurate 31 characters in all documentation
-- **✅ Verified**: 100% game accuracy with proper in-game terminology
-- **💯 Maintained**: All functionality preserved with improved data accuracy
+### Performance
+- **Module Loading**: 12 optimized JavaScript modules with Promise-based dependency management
+- **State Management**: Dual-layer state system (global vs local) for optimal performance
+- **Rendering**: Local state updates prevent unwanted re-renders and DOM duplication
+- **Search Optimization**: Real-time filtering with preserved user focus and interactions
+- **Memory Efficiency**: Smart event delegation and targeted content updates
+- **Optimized Assets**: WebP images for character portraits
+- **Efficient Caching**: Service worker strategy for offline functionality
+- **Mobile-first Design**: Touch-optimized responsive interface
 
-### **Version 1.2.3 - Enhanced Mobile Experience (2025-07-16)**
-- **🔧 Fixed**: Critical mobile search keyboard persistence issue
-- **🎨 Enhanced**: Unified bubble design system with perfect alignment  
-- **🚀 Added**: Scroll-to-top navigation and clickable logo
-- **📱 Improved**: Target selector workflow and responsive layout
-- **⚡ Optimized**: Mobile browser compatibility and touch handling
+## 📖 Documentation
 
-### **Version 1.2.2 - Modular Architecture (2025-07-15)**
-- **🏗️ Major**: Complete modular architecture transformation (93% size reduction)
-- **🎨 Added**: Custom mobile background eliminates stretching/blurring
-- **🐛 Fixed**: All console errors and warnings resolved
-- **📱 Enhanced**: Mobile experience optimization
-- **🔧 Improved**: Service worker caching and offline functionality
+### For Users
+- **Getting Started:** See this README
+- **Features:** Check `docs/project/PROJECT_STATUS.md`
+- **Updates:** See `docs/project/CHANGELOG.md`
 
-[View Complete Changelog](CHANGELOG.md)
+### For Developers
+- **Development Guide:** `docs/development/CLAUDE.md`
+- **Update Process:** `tools/templates/UPDATE_WORKFLOW.md`
+- **Templates:** All files in `tools/templates/`
 
-## 📞 Support & Feedback
+### For Contributors
+- **Data Reference:** Files in `docs/data-reference/`
+- **Research:** Files in `research/`
+- **Meta Analysis:** `tools/templates/META_RESEARCH_TEMPLATE.md`
 
-### **Getting Help**
-- **Issues**: [GitHub Issues](https://github.com/fwmc-ai/uma-planner/issues)
-- **Documentation**: Check this README and [Project Status](PROJECT_STATUS.md)
-- **Live Demo**: [https://fwmc-ai.github.io/uma-planner/](https://fwmc-ai.github.io/uma-planner/)
+## 🆕 Adding New Content
 
-### **Reporting Bugs**
-When reporting bugs, please include:
-- **Browser and version**
-- **Device type** (mobile/desktop)
-- **Steps to reproduce**
-- **Expected vs actual behavior**
-- **Screenshots** if applicable
+When new characters or support cards are released:
 
-### **Feature Requests**
-We love hearing your ideas! Please:
-- **Check existing issues** to avoid duplicates
-- **Describe the problem** your feature would solve
-- **Explain the proposed solution**
-- **Consider the impact** on mobile users
+1. **Use the templates** in `tools/templates/`
+2. **Follow the workflow** in `UPDATE_WORKFLOW.md`
+3. **Test thoroughly** before committing changes
+4. **Update documentation** as specified in templates
+
+## 🏆 Project Status
+
+- **Current Version:** 1.8.2
+- **Development Phase:** Comprehensive Skills System Complete
+- **Last Updated:** 2025-07-31
+- **Status:** Production Ready with Revolutionary Skills Database
+
+**Major Achievement**: Complete skills system overhaul with 50+ documented skills, strategy-specific recommendations, and real-time Training Settings integration.
+
+For detailed project status and revolutionary discoveries, see `docs/project/PROJECT_STATUS.md`.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Uma Musume Pretty Derby** by Cygames for the amazing game
-- **Global Community** for character data verification and testing
-- **Contributors** who helped improve the application
-- **Mobile Users** who provided feedback for the enhanced experience
+This project is licensed under the terms specified in `docs/project/LICENSE`.
 
 ---
 
-<div align="center">
-
-**🏇 Ready to optimize your Uma Musume training? [Start Planning Now!](https://fwmc-ai.github.io/uma-planner/) 🏇**
-
-*Built with ❤️ for the Uma Musume Global community*
-
-</div>
+**Built with ❤️ for the Uma Musume community**

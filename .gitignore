@@ -1,17 +1,57 @@
-# Development documentation (for Claude Code)
+# ================================
+# LARGE FILES & ASSETS (Do not commit)
+# ================================
+
+# Support card level progression screenshots (851MB total, 1000+ PNG files)
+# These were used for data extraction but are not needed for the app
+assets/support-card-levels/
+assets/support-card-art/
+
+# ================================
+# DEVELOPMENT & RESEARCH FILES
+# ================================
+
+# Development documentation (for Claude Code - internal use only)
 CLAUDE.md
 PROJECT_STATUS.md
 MODULARIZATION_CHECKLIST.md
+SKILLS_SYSTEM_IMPLEMENTATION_SUMMARY.md
+
+# Research files (2.4MB total - contains raw research materials)
+research/
+
+# All documentation (moved essential docs to project-docs/)
+docs/
+
+# Development tools and templates (used for development workflow only)
+tools/
+
+# Development debugging files
+debug-support-cards.js
+src/debug-support-cards.js
+console.txt
+
+# Local development files
+.claude/
+testing-notes.txt
+UMA_MUSUME_DATA_REFERENCE.md
+UMA_MUSUME_DATA_REFERENCE_RESPONSE.txt
+PHASE_4A_DATA_VALIDATION_REQUIREMENTS.md
+Phase_4a_data_validation*
+
+# ================================
+# BACKUP & VERSION CONTROL
+# ================================
+
+# Backup files (20MB total - version snapshots)
+backups/
 
 # License file (can be excluded for web app)
 LICENSE
 
-# Backup files and unused modules
-backups/
-suggestion-box.png
-
-# Research files
-research/
+# ================================
+# STANDARD EXCLUSIONS
+# ================================
 
 # Dependencies
 node_modules/
@@ -37,13 +77,6 @@ Thumbs.db
 *.tmp
 *.temp
 
-# Local development files
-.claude/
-testing-notes.txt
-UMA_MUSUME_DATA_REFERENCE.md
-UMA_MUSUME_DATA_REFERENCE_RESPONSE.txt
-PHASE_4A_DATA_VALIDATION_REQUIREMENTS.md
-
 # Environment files
 .env
 .env.local
@@ -52,3 +85,50 @@ PHASE_4A_DATA_VALIDATION_REQUIREMENTS.md
 # Build artifacts (if any)
 dist/
 build/
+
+# ================================
+# FILE TYPE EXCLUSIONS
+# ================================
+
+# Large image files (except essential app assets)
+*.PNG
+*.png
+!assets/images/**/*.png
+!assets/umaicons/**/*.png
+
+# Text files with large research data
+*.txt
+!tools/templates/**/*.txt
+
+# ================================
+# SPECIFIC FILE EXCLUSIONS
+# ================================
+
+# Development-only files in root
+console.txt
+GITIGNORE_ANALYSIS.md
+
+# Note: README.md and CHANGELOG.md are intentionally NOT excluded 
+# as they are essential project documentation
+
+# ================================
+# EXPLICIT INCLUSIONS (ensure these are tracked)
+# ================================
+
+# Core application files (force include despite wildcards above)
+!src/**/*.js
+!src/**/*.html
+!src/**/*.css
+!src/**/*.json
+!src/sw.js
+
+# Essential project documentation (moved to project-docs/)
+!project-docs/CHANGELOG.md
+!project-docs/README.md
+!project-docs/LICENSE
+
+# Core assets (app icons, backgrounds, character portraits)
+!assets/images/icons/*
+!assets/images/backgrounds/*
+!assets/images/logo.png
+!assets/umaicons/**/*.webp
