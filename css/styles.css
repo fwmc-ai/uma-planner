@@ -78,6 +78,29 @@ body {
         touch-action: manipulation;
     }
     
+    /* Mobile-specific support card layout */
+    @media (max-width: 640px) {
+        /* Mobile support card deck slots - very condensed */
+        .deck-slot {
+            min-height: 100px !important;
+            padding: 6px !important;
+        }
+        
+        /* Mobile dropdowns - more compact */
+        .level-select-dropdown,
+        .training-assignment-select {
+            min-height: 28px !important;
+            padding: 4px 6px !important;
+            font-size: 11px !important;
+            line-height: 1.2;
+        }
+        
+        /* Rainbow button more compact */
+        .rainbow-toggle-btn {
+            font-size: 14px !important;
+        }
+    }
+    
     /* Optimize character cards for mobile - better spacing and touch targets */
     .character-card {
         padding: 16px;

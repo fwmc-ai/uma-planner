@@ -1019,19 +1019,21 @@
                 }`
             );
             tabButton.setAttribute('data-tab', tab.id);
-            // Mobile-optimized tab labels: remove emojis on mobile, shorten text
-            const isMobile = window.innerWidth <= 640;
+            // Mobile-optimized tab labels: use CSS-based responsive design instead of JS detection
             const mobileLabels = {
                 'character-info': 'Character',
                 'support-cards': 'Cards', 
                 'skills': 'Skills',
                 'guide': 'Guide'
             };
-            const displayLabel = isMobile ? mobileLabels[tab.id] || tab.label : tab.label;
-            const iconHtml = isMobile ? '' : `<span class="text-lg sm:text-xl">${tab.icon}</span>`;
-            const labelHtml = `<span class="text-xs sm:text-sm ${isMobile ? '' : 'ml-1 sm:ml-2'}">${displayLabel}</span>`;
             
-            tabButton.innerHTML = iconHtml + labelHtml;
+            tabButton.innerHTML = `
+                <span class="text-lg sm:text-xl hidden sm:inline">${tab.icon}</span>
+                <span class="text-xs sm:text-sm ml-0 sm:ml-1">
+                    <span class="sm:hidden">${mobileLabels[tab.id] || tab.label}</span>
+                    <span class="hidden sm:inline">${tab.label}</span>
+                </span>
+            `;
             tabButton.addEventListener('click', () => switchTab(tab.id));
             tabList.appendChild(tabButton);
         });
@@ -1457,7 +1459,7 @@
                             }
                             
                             return `
-                                <div class="border-2 border-dashed border-gray-300 rounded-lg p-3 sm:p-2 bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer deck-slot touch-manipulation min-h-[140px] sm:min-h-[120px] ${currentRainbowStatus ? 'rainbow-shimmer' : ''}" 
+                                <div class="border-2 border-dashed border-gray-300 rounded-lg p-2 bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer deck-slot touch-manipulation min-h-[100px] sm:min-h-[120px] ${currentRainbowStatus ? 'rainbow-shimmer' : ''}" 
                                      data-slot="${index}">
                                     ${card ? `
                                         <div class="h-full flex flex-col">
@@ -1466,7 +1468,7 @@
                                                     ${card.rarity}
                                                 </div>
                                             </div>
-                                            <div class="flex-1 bg-gradient-to-b ${getCardGradient(card.type)} rounded text-white p-1 mb-2">
+                                            <div class="flex-1 bg-gradient-to-b ${getCardGradient(card.type)} rounded text-white p-1 mb-1 sm:mb-2">
                                                 <div class="text-xs font-medium text-center leading-tight">
                                                     ${card.name}
                                                 </div>
@@ -1474,12 +1476,24 @@
                                                     ${card.type}
                                                 </div>
                                             </div>
-                                            <!-- Level Selection Squares -->
-                                            <div class="mb-2">
-                                                <div class="text-xs text-gray-600 mb-1 text-center">Level</div>
-                                                <div class="grid grid-cols-3 sm:grid-cols-4 gap-1 sm:gap-0.5">
+                                            <!-- Level Selection - Mobile Dropdown / Desktop Squares -->
+                                            <div class="mb-1 sm:mb-2">
+                                                <div class="text-xs text-gray-600 mb-1 text-center leading-none">Level</div>
+                                                <!-- Mobile: Dropdown -->
+                                                <div class="sm:hidden">
+                                                    <select class="level-select-dropdown w-full text-xs px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-blue-500 focus:border-blue-500 touch-manipulation" 
+                                                            data-slot="${index}">
+                                                        ${availableLevels.map(level => `
+                                                            <option value="${level}" ${level === currentLevel ? 'selected' : ''}>Level ${level}</option>
+                                                        `).join('')}
+                                                    </select>
+                                                </div>
+                                                
+                                                <!-- Desktop: Square Buttons -->
+                                                <div class="hidden sm:block">
+                                                    <div class="grid grid-cols-4 gap-0.5">
                                                     ${availableLevels.map(level => `
-                                                        <button class="level-select-btn h-8 sm:h-5 text-xs border rounded flex items-center justify-center transition-colors font-medium touch-manipulation min-w-[32px] sm:min-w-auto ${
+                                                        <button class="level-select-btn h-5 text-xs border rounded flex items-center justify-center transition-colors font-medium ${
                                                             level === currentLevel 
                                                                 ? 'bg-blue-500 text-white border-blue-600 shadow-sm' 
                                                                 : 'bg-white text-gray-700 border-gray-300 hover:bg-blue-50 hover:border-blue-400'
@@ -1490,11 +1504,12 @@
                                                             ${level}
                                                         </button>
                                                     `).join('')}
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- Training Assignment -->
-                                            <div class="mb-2">
-                                                <div class="text-xs text-gray-600 mb-1 text-center">Training</div>
+                                            <div class="mb-1 sm:mb-2">
+                                                <div class="text-xs text-gray-600 mb-1 text-center leading-none">Training</div>
                                                 <select class="training-assignment-select w-full text-xs px-2 py-2 sm:px-1 sm:py-1 border border-gray-300 rounded focus:ring-1 focus:ring-blue-500 focus:border-blue-500 min-h-[32px] sm:min-h-auto touch-manipulation" 
                                                         data-slot="${index}">
                                                     <option value="" ${!currentAssignment ? 'selected' : ''}>Unassigned</option>
@@ -1506,8 +1521,8 @@
                                                 </select>
                                             </div>
                                             <!-- Rainbow Training Toggle -->
-                                            <div class="mb-2">
-                                                <div class="text-xs text-gray-600 mb-1 text-center">Rainbow</div>
+                                            <div class="mb-1 sm:mb-2">
+                                                <div class="text-xs text-gray-600 mb-1 text-center leading-none">Rainbow</div>
                                                 <div class="flex items-center justify-center">
                                                     <button class="rainbow-toggle-btn text-lg hover:scale-110 transition-transform ${currentRainbowStatus ? 'text-rainbow' : 'text-gray-400'}" 
                                                             data-slot="${index}" 
@@ -4553,6 +4568,14 @@
             
             // Handle select dropdowns with change event
             document.addEventListener('change', (e) => {
+                // Mobile level selection dropdowns
+                if (e.target.classList.contains('level-select-dropdown')) {
+                    const slot = parseInt(e.target.dataset.slot);
+                    const level = parseInt(e.target.value);
+                    updateCardLevel(slot, level);
+                    return;
+                }
+                
                 // Training assignment dropdowns
                 if (e.target.classList.contains('training-assignment-select')) {
                     const slot = parseInt(e.target.dataset.slot);
@@ -4563,7 +4586,7 @@
             });
             
             document.addEventListener('click', (e) => {
-                // Card level selection
+                // Card level selection (desktop buttons)
                 if (e.target.classList.contains('level-select-btn')) {
                     e.preventDefault();
                     e.stopPropagation();
