@@ -5,7 +5,9 @@
 # Support card level progression screenshots (851MB total, 1000+ PNG files)
 # These were used for data extraction but are not needed for the app
 assets/support-card-levels/
+assets/support-card-levels/*
 assets/support-card-art/
+assets/support-card-art/*
 
 # ================================
 # DEVELOPMENT & RESEARCH FILES
@@ -19,17 +21,26 @@ SKILLS_SYSTEM_IMPLEMENTATION_SUMMARY.md
 
 # Research files (2.4MB total - contains raw research materials)
 research/
+research/*
+research/**/*
 
 # All documentation (moved essential docs to project-docs/)
 docs/
+docs/*
+docs/**/*
 
 # Development tools and templates (used for development workflow only)
 tools/
+tools/*
+tools/**/*
 
 # Development debugging files
 debug-support-cards.js
 src/debug-support-cards.js
 console.txt
+debug-console-capture.js
+DEBUG-GUIDE.md
+*.log
 
 # Local development files
 .claude/
