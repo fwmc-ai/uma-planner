@@ -22,7 +22,7 @@
             <div class="flex justify-center items-center mb-4">
                 <!-- Logo container - smart fallback system with click functionality -->
                 <div id="site-logo" class="transition-opacity duration-300 cursor-pointer" onclick="window.location.reload();">
-                    <img id="logo-img" src="../assets/images/logo.png" alt="Uma Musume Career Planner" 
+                    <img id="logo-img" src="./assets/images/logo.png" alt="Uma Musume Career Planner" 
                          class="h-36 md:h-48 w-auto max-w-4xl mx-auto hover:opacity-80 transition-opacity" style="display: block;">
                     <div id="logo-fallback" class="text-center hover:opacity-80 transition-opacity" style="display: none;">
                         <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-1">🏇 Uma Musume</h1>
@@ -178,12 +178,12 @@
             
             if (isSpecialCharacter) {
                 // Special characters only have one image in the special directory
-                imagePath = `../assets/umaicons/special/${character.id}.png`;
+                imagePath = `./assets/umaicons/special/${character.id}.png`;
             } else {
                 // Regular characters use school/secondary costume system
                 imagePath = appState.costumeMode === 'school' ? 
-                    `../assets/umaicons/school/${character.id}.webp` : 
-                    `../assets/umaicons/secondary/${character.id}.webp`;
+                    `./assets/umaicons/school/${character.id}.webp` : 
+                    `./assets/umaicons/secondary/${character.id}.webp`;
             }
             const backgroundStyle = hasCharacterImage ? 
                 `background-image: url('${imagePath}'); background-position: right center; background-repeat: no-repeat; background-size: contain; background-blend-mode: multiply;` : '';
