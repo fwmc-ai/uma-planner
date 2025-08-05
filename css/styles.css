@@ -327,7 +327,7 @@ input, textarea, select {
 
 /* Support Card Deck Slots - Consistent Height */
 .deck-slot {
-    height: 340px; /* Fixed height to prevent expansion - matches filled slot needs */
+    height: 380px; /* Increased height to accommodate rainbow training button */
     display: flex;
     flex-direction: column;
     overflow: hidden; /* Prevent any overflow from expanding the slot */

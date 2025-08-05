@@ -1,8 +1,8 @@
 {
-  "version": "1.9.0",
+  "version": "1.9.2",
   "release_date": "2025-01-08",
-  "release_name": "Research-Based Training Algorithm & Enhanced UX",
-  "build_number": 17,
+  "release_name": "Mobile Experience Enhancement",
+  "build_number": 18,
   "features": [
     "Research-based training recommendations algorithm (Franco Lopez & Global Reference research)",
     "Multi-context awareness: Detects survival/building/optimization training phases",
@@ -28,12 +28,13 @@
     "Complete level progression system (levels 1-50 for all support cards)",
     "Progressive Web App with offline support and app installation",
     "Modular JavaScript architecture for maintainability",
-    "Mobile-first responsive design with touch optimization"
+    "Mobile-first responsive design with touch optimization",
+    "First-time mobile visitor disclaimer with desktop experience recommendation"
   ],
-  "cache_version": "uma-planner-v1.9.0",
+  "cache_version": "uma-planner-v1.9.2",
   "data_version": "2025-01-08",
   "minimum_cache_clear": true,
-  "update_notes": "🚀 MAJOR UPDATE: Research-Based Training Algorithm & Enhanced UX! Complete training system overhaul based on Franco Lopez and Global Reference research with multi-context awareness, dynamic stat priorities, and distance-specific thresholds. Added sticky training header with bidirectional sync for enhanced UX during frequent training adjustments. Implemented diminishing returns system for realistic balanced training recommendations. Fixed 0-value training recommendations and added professional debug system with file export capabilities.",
+  "update_notes": "📱 Mobile Experience Enhancement: Added first-time visitor disclaimer for mobile users, informing them that while the Uma Musume Career Planner is fully functional on mobile, the optimal experience is on desktop with its detailed interface. The disclaimer appears only once and can be dismissed. Desktop users are unaffected by this change.",
   "compatibility": {
     "browsers": ["Chrome 80+", "Firefox 75+", "Safari 13+", "Edge 80+"],
     "mobile": true,

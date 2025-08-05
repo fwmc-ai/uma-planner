@@ -68,6 +68,63 @@
     }
     
     /**
+     * Show mobile disclaimer for first-time mobile visitors
+     */
+    function showMobileDisclaimerIfNeeded() {
+        // Check if we're on mobile
+        const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        
+        if (!isMobile) return;
+        
+        // Check if disclaimer has been shown before
+        const disclaimerShown = localStorage.getItem('uma-mobile-disclaimer-shown');
+        if (disclaimerShown) return;
+        
+        // Create modal overlay
+        const overlay = createElement('div', 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4');
+        
+        // Create modal content
+        const modal = createElement('div', 'bg-white rounded-lg shadow-xl max-w-sm w-full mx-4 p-6 text-center');
+        
+        modal.innerHTML = `
+            <div class="mb-4">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Mobile Notice</h3>
+                <p class="text-gray-600 text-sm mb-4">
+                    While the Uma Musume Career Planner is fully functional on mobile, the best experience is on desktop with its larger screen and more detailed interface.
+                </p>
+                <p class="text-gray-600 text-xs">
+                    You can still use all features on mobile - this message won't appear again.
+                </p>
+            </div>
+            <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors" id="mobile-disclaimer-ok">
+                Got it!
+            </button>
+        `;
+        
+        // Add event listener to close button
+        modal.querySelector('#mobile-disclaimer-ok').addEventListener('click', () => {
+            localStorage.setItem('uma-mobile-disclaimer-shown', 'true');
+            document.body.removeChild(overlay);
+        });
+        
+        // Close on overlay click
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                localStorage.setItem('uma-mobile-disclaimer-shown', 'true');
+                document.body.removeChild(overlay);
+            }
+        });
+        
+        overlay.appendChild(modal);
+        document.body.appendChild(overlay);
+    }
+    
+    /**
      * Calculate effective stats (base stats + support card bonuses)
      * @returns {Object} Effective stats including support card bonuses
      */
@@ -492,6 +549,9 @@
             container.innerHTML = '<div class="text-center p-8">No character selected</div>';
             return container;
         }
+        
+        // Show mobile disclaimer on first visit (mobile only)
+        showMobileDisclaimerIfNeeded();
         
         // Back button
         const backButton = createElement('div', 'flex items-center mb-6');
