@@ -1,11 +1,11 @@
 // Uma Musume Career Planner - Service Worker
-// Version 1.9.0 - Research-Based Training Algorithm & Mobile Optimization
+// Version 1.9.1 - Mobile Support Card UX Optimization
 
-const CACHE_NAME = 'uma-planner-v1.9.0-production';
-const STATIC_CACHE_NAME = 'uma-static-v1.9.0-production';
+const CACHE_NAME = 'uma-planner-v1.9.1-production';
+const STATIC_CACHE_NAME = 'uma-static-v1.9.1-production';
 
 // Files to cache for offline functionality  
-const CACHE_BUST = '?v=1.9.0-' + Date.now();
+const CACHE_BUST = '?v=1.9.1-' + Date.now();
 const STATIC_ASSETS = [
   './',
   './index.html' + CACHE_BUST,
